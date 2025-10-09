@@ -1,11 +1,32 @@
 @use "../base/variables" as *;
-
-.text_box {
+section {
+  position: relative;
   margin-inline: 1rem;
-  border: $text_color solid 1px;
-  border-radius: 1rem;
 
-  p {
-    margin: 2rem;
+  .sec_title {
+    font-size: 1.5rem;
+    margin-block-end: 0.5rem;
+  }
+
+  .smalltext {
+    font-size: 1rem;
+    position: absolute;
+    top: 30px;
+  }
+
+  .middletext {
+    font-size: 1.5rem;
+  }
+
+  .text_box {
+    margin-block-start: 1rem;
+    border: $text_color solid 1px;
+    border-radius: 1rem;
+
+    p {
+      margin: 2rem;
+      line-height: 2rem;
+      font-weight: bold;
+    }
   }
 }

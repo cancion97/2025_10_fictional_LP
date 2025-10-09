@@ -1,0 +1,7 @@
+@use "../base/variables" as *;
+
+footer {
+  color: $bg_color;
+  background-image: url(../images/footer_bg.png);
+  background-size: contain;
+}
