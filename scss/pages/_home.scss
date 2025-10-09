@@ -1,0 +1,11 @@
+@use "../base/variables" as *;
+
+.text_box {
+  margin-inline: 1rem;
+  border: $text_color solid 1px;
+  border-radius: 1rem;
+
+  p {
+    margin: 2rem;
+  }
+}

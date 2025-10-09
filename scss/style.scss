@@ -1,0 +1,35 @@
+@use "vendors/ress";
+// ハブファイルの呼び出し方
+@use "base" as *;
+@use "pages" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Palanquin+Dark:wght@400;500;600;700&display=swap");
+
+body {
+  background-color: $bg_color;
+  color: $text_color;
+  font-family: $font_jp;
+}
+
+.english {
+  font-family: $font_en;
+}
+
+// ボタン
+.button {
+  a {
+    border-radius: 2rem;
+    border: 1px solid $text_color;
+    background-color: $accent_color01;
+    color: $bg_color;
+    text-decoration: none;
+    display: inline-block;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    transition: 0.2s;
+    &:hover {
+      background-color: #ffc9b6;
+      color: $text_color;
+    }
+  }
+}

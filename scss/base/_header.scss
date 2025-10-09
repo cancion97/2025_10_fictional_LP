@@ -1,0 +1,74 @@
+@use "../base/variables" as *;
+
+//ヘッダー
+
+header {
+  background-image: url(../images/main_image.png);
+  background-size: contain;
+  max-height: 1000px;
+  min-height: 800px;
+}
+
+// ハンバーガーメニュー
+.container {
+  width: 100%;
+  height: px;
+}
+.hbgButton {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 30px auto;
+  cursor: pointer;
+  &__fig {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 40px;
+    &--01 {
+      top: 0;
+      transition: top 0.3s 0.3s, transform 0.3s 0s;
+    }
+    &--02 {
+      top: 40px;
+      opacity: 1;
+      transition: opacity 0.3s 0.3s;
+    }
+    &--03 {
+      top: 80px;
+      transition: top 0.3s 0.3s, transform 0.3s 0s;
+    }
+    svg {
+      path {
+        fill: none;
+        stroke: #0375b4;
+        stroke-width: 2px;
+      }
+    }
+  }
+  &.is-open {
+    .hbgButton__fig {
+      &--01 {
+        top: 40px;
+        transform: rotate(30deg);
+        transition: top 0.3s 0.2s, transform 0.3s 0.5s;
+      }
+      &--02 {
+        opacity: 0;
+        transition: opacity 0.3s 0.3s;
+      }
+      &--03 {
+        top: 40px;
+        transform: rotate(-30deg);
+        transition: top 0.3s 0.2s, transform 0.3s 0.5s;
+      }
+    }
+  }
+}
+
+//タイトル
+.main_title {
+  font-family: $font_en;
+  font-size: 40px;
+}
