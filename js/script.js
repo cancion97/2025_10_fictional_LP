@@ -5,9 +5,9 @@
 // https://developer.mozilla.org/ja/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API
 
 //ハンバーガーメニュー
-
-const hbgButton = document.querySelector(".js-hbgButton"),
-  hbgPath = document.querySelectorAll(".js-hbgPath");
+const menu = document.querySelector(".menu");
+const hbgButton = document.querySelector(".js-hbgButton");
+const hbgPath = document.querySelectorAll(".js-hbgPath");
 
 let timingOpen = {
   iterations: 1,
@@ -36,15 +36,15 @@ let keyframeClose = [
 
 hbgButton.addEventListener("click", () => {
   if (hbgButton.classList.contains("is-open")) {
-    hbgPath.forEach((e) => {
-      e.animate(keyframeClose, timingClose);
-    });
+    // 閉じるとき
+    hbgPath.forEach((e) => e.animate(keyframeClose, timingClose));
     hbgButton.classList.remove("is-open");
+    menu.classList.remove("active"); // ← 閉じる時も反映
   } else {
-    hbgPath.forEach((e) => {
-      e.animate(keyframeOpen, timingOpen);
-    });
+    // 開くとき
+    hbgPath.forEach((e) => e.animate(keyframeOpen, timingOpen));
     hbgButton.classList.add("is-open");
+    menu.classList.add("active");
   }
 });
 

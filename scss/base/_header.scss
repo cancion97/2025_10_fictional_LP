@@ -106,47 +106,50 @@ header {
       }
     }
   }
-}
 
-//タイトル
-.title_wrap {
-  position: relative;
-  margin-block-start: 8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  //タイトル
+  .title_wrap {
+    position: relative;
+    margin-block-start: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  .arch {
-    position: absolute;
-    top: -40%;
+    .arch {
+      position: absolute;
+      top: -40%;
+    }
+
+    .main_title {
+      font-family: $font_en;
+      font-size: 40px;
+    }
+    .sub_title {
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+      top: 65px;
+      white-space: nowrap;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      font-size: 24px; /* 文字のサイズ */
+    }
+  }
+  .dilate {
+    filter: url(#dilate);
   }
 
-  .main_title {
-    font-family: $font_en;
-    font-size: 40px;
+  .scroll_wrap {
+    position: relative;
   }
-  .sub_title {
-    position: absolute;
-    top: 65px;
-    font-weight: bold;
-    letter-spacing: 0.2em;
-    font-size: 24px; /* 文字のサイズ */
-  }
-}
-.dilate {
-  filter: url(#dilate);
-}
 
-.scroll_wrap {
-  position: relative;
-}
-
-.scroll_arrow {
-  img {
-    position: absolute;
-    width: 32px;
-    right: 1rem;
-    bottom: 2rem;
+  .scroll_arrow {
+    img {
+      position: absolute;
+      width: 32px;
+      right: 1rem;
+      bottom: 2rem;
+    }
   }
 }
