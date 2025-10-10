@@ -1,32 +1,261 @@
 @use "../base/variables" as *;
+
+//ハンバーガーメニュー中身
+.menu {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  background-color: $bg_color;
+  width: 100vw;
+  height: 120vh;
+
+  .title_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    svg.arch {
+      display: block; // SVGの下の空白をなくす
+      height: auto; // 必要なら高さ固定も
+      margin: 0;
+    }
+
+    .main_title,
+    .sub_title {
+      margin: 0; // h1, h2の余白もリセット
+    }
+  }
+
+  nav {
+    position: relative;
+    height: 220px;
+
+    ul {
+      top: -60px;
+      right: 50%;
+      transform: translateX(50%);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+
+      li {
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          color: $text_color;
+        }
+      }
+    }
+  }
+
+  .sns_wrap {
+    margin-block-start: 3rem;
+  }
+}
+
+//メイン
 section {
+  padding-block-start: 0.1px;
   position: relative;
   margin-inline: 1rem;
 
   .sec_title {
+    margin-block-start: 2rem;
     font-size: 1.5rem;
-    margin-block-end: 0.5rem;
+  }
+
+  //セクションタイトルの下線
+  .under_line {
+    position: absolute;
+    z-index: 1;
+    height: 12px;
+    top: 55px;
+  }
+
+  .orange01 {
+    background-color: #ff6b3540;
+    width: 148px;
+    left: -17px;
+  }
+
+  .blue {
+    background-color: #4fc2f740;
+    right: -17px;
+    width: 217px;
+  }
+
+  .orange02 {
+    background-color: #ff6b3540;
+    width: 170px;
+    left: -17px;
   }
 
   .smalltext {
     font-size: 1rem;
-    position: absolute;
-    top: 30px;
+    line-height: 20px;
   }
 
   .middletext {
     font-size: 1.5rem;
+    line-height: 20px;
+  }
+
+  .beer_illust {
+    width: 39px;
+    position: relative;
+    img {
+      position: absolute;
+      bottom: -3px;
+      left: 140px;
+    }
   }
 
   .text_box {
     margin-block-start: 1rem;
+    margin-inline: 1rem;
     border: $text_color solid 1px;
     border-radius: 1rem;
 
     p {
-      margin: 2rem;
+      margin-inline: 2rem;
+      margin-block-start: 2rem;
+      margin-block-end: 1rem;
       line-height: 2rem;
       font-weight: bold;
     }
+  }
+
+  .beer_image {
+    position: absolute;
+    width: 189px;
+    bottom: 30px;
+    right: -50px;
+    rotate: 8.62deg;
+  }
+
+  .worldwide_line {
+    width: 100%;
+    text-align: right;
+    padding: 1rem;
+
+    img {
+      display: inline-block;
+      width: 208px;
+      height: 163px;
+    }
+  }
+}
+
+//右寄せの文字
+.right {
+  & .sec_title,
+  & .middletext,
+  & .smalltext {
+    text-align: right;
+  }
+}
+
+//波線
+.wave {
+  margin-block: 4rem;
+}
+
+//味のチャート
+.chart {
+  width: 320px;
+  margin-inline: auto;
+}
+
+.chart_text {
+  margin-block-start: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+//レビュー
+.review_title {
+  display: block;
+  text-align: center;
+}
+
+//横スクロール
+.review_container {
+  width: 100%;
+  max-width: 430px; /* スマホ幅制限 */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.contents {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal_scroll {
+  display: flex;
+  overflow-x: auto; /* 横スクロール有効 */
+  scroll-snap-type: x mandatory; /* スナップスクロール */
+  -webkit-overflow-scrolling: touch;
+  padding: 2rem 3rem;
+  cursor: grab; // 通常時は grab
+}
+
+.horizontal_scroll.active {
+  cursor: grabbing; // ドラッグ中は grabbing
+}
+
+.picture {
+  width: 279px;
+  height: 460px;
+  display: flex;
+  gap: 4.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  &::after {
+    content: "";
+    flex: 0 0 140px; /* 右端余白 */
+  }
+}
+
+.picture img {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.horizontal_scroll::-webkit-scrollbar {
+  display: none;
+}
+.horizontal_scroll {
+  scroll-behavior: smooth;
+}
+
+.drag {
+  width: 100%;
+  text-align: right;
+  padding: 1rem;
+
+  img {
+    display: inline-block;
+    width: 41px;
+    height: auto;
+  }
+}
+
+//トップボタン
+.top_btn {
+  margin-inline: auto;
+  width: 100px;
+  height: auto;
+  margin-block-start: 2rem;
+  transition: 0.2s;
+  &:hover {
+    scale: 1.1;
   }
 }

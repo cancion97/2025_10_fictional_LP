@@ -284,6 +284,11 @@ header {
   background-size: cover;
   background-position: center;
 }
+@media (width > 430px) {
+  header {
+    border-radius: 2rem 2rem 0 0;
+  }
+}
 header .header_wrap {
   margin-inline: 1rem;
   display: flex;
@@ -312,6 +317,7 @@ header .header_wrap .header_right .cart img {
   height: auto;
 }
 header .header_wrap .header_right .container {
+  z-index: 100;
   width: 30px;
   height: 30px;
   margin-block-start: 0.8rem;
@@ -395,47 +401,306 @@ header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--03 {
   filter: url(#dilate);
 }
 
+.scroll_wrap {
+  position: relative;
+}
+
+.scroll_arrow img {
+  position: absolute;
+  width: 32px;
+  right: 1rem;
+  bottom: 2rem;
+}
+
 footer {
+  margin-block-start: 4rem;
+  padding-block-start: 0.1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #faf8f4;
   background-image: url(../images/footer_bg.png);
-  background-size: contain;
+  background-size: auto;
+}
+@media (width > 430px) {
+  footer {
+    border-radius: 0 0 2rem 2rem;
+  }
+}
+footer .logo {
+  margin-block-start: 4rem;
+}
+footer .sns_wrap {
+  margin-block-start: 3.5rem;
+}
+footer .footer_beer {
+  margin-block-start: 2.5rem;
+  width: 153px;
+  height: auto;
+}
+footer small {
+  margin-block-end: 2rem;
+  font-size: 14px;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  background-color: #faf8f4;
+  width: 100vw;
+  height: 120vh;
+}
+.menu .title_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu .title_wrap svg.arch {
+  display: block;
+  height: auto;
+  margin: 0;
+}
+.menu .title_wrap .main_title,
+.menu .title_wrap .sub_title {
+  margin: 0;
+}
+.menu nav {
+  position: relative;
+  height: 220px;
+}
+.menu nav ul {
+  top: -60px;
+  right: 50%;
+  transform: translateX(50%);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.menu nav ul li {
+  list-style: none;
+}
+.menu nav ul li a {
+  text-decoration: none;
+  color: #0a1d37;
+}
+.menu .sns_wrap {
+  margin-block-start: 3rem;
 }
 
 section {
+  padding-block-start: 0.1px;
   position: relative;
   margin-inline: 1rem;
 }
 section .sec_title {
+  margin-block-start: 2rem;
   font-size: 1.5rem;
-  margin-block-end: 0.5rem;
+}
+section .under_line {
+  position: absolute;
+  z-index: 1;
+  height: 12px;
+  top: 55px;
+}
+section .orange01 {
+  background-color: rgba(255, 107, 53, 0.2509803922);
+  width: 148px;
+  left: -17px;
+}
+section .blue {
+  background-color: rgba(79, 194, 247, 0.2509803922);
+  right: -17px;
+  width: 217px;
+}
+section .orange02 {
+  background-color: rgba(255, 107, 53, 0.2509803922);
+  width: 170px;
+  left: -17px;
 }
 section .smalltext {
   font-size: 1rem;
-  position: absolute;
-  top: 30px;
+  line-height: 20px;
 }
 section .middletext {
   font-size: 1.5rem;
+  line-height: 20px;
+}
+section .beer_illust {
+  width: 39px;
+  position: relative;
+}
+section .beer_illust img {
+  position: absolute;
+  bottom: -3px;
+  left: 140px;
 }
 section .text_box {
   margin-block-start: 1rem;
+  margin-inline: 1rem;
   border: #0a1d37 solid 1px;
   border-radius: 1rem;
 }
 section .text_box p {
-  margin: 2rem;
+  margin-inline: 2rem;
+  margin-block-start: 2rem;
+  margin-block-end: 1rem;
   line-height: 2rem;
   font-weight: bold;
+}
+section .beer_image {
+  position: absolute;
+  width: 189px;
+  bottom: 30px;
+  right: -50px;
+  rotate: 8.62deg;
+}
+section .worldwide_line {
+  width: 100%;
+  text-align: right;
+  padding: 1rem;
+}
+section .worldwide_line img {
+  display: inline-block;
+  width: 208px;
+  height: 163px;
+}
+
+.right .sec_title, .right .middletext, .right .smalltext {
+  text-align: right;
+}
+
+.wave {
+  margin-block: 4rem;
+}
+
+.chart {
+  width: 320px;
+  margin-inline: auto;
+}
+
+.chart_text {
+  margin-block-start: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.review_title {
+  display: block;
+  text-align: center;
+}
+
+.review_container {
+  width: 100%;
+  max-width: 430px; /* スマホ幅制限 */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.contents {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal_scroll {
+  display: flex;
+  overflow-x: auto; /* 横スクロール有効 */
+  scroll-snap-type: x mandatory; /* スナップスクロール */
+  -webkit-overflow-scrolling: touch;
+  padding: 2rem 3rem;
+  cursor: grab;
+}
+
+.horizontal_scroll.active {
+  cursor: grabbing;
+}
+
+.picture {
+  width: 279px;
+  height: 460px;
+  display: flex;
+  gap: 4.5rem;
+  flex-shrink: 0;
+  align-items: center;
+}
+.picture::after {
+  content: "";
+  flex: 0 0 140px; /* 右端余白 */
+}
+
+.picture img {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.horizontal_scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal_scroll {
+  scroll-behavior: smooth;
+}
+
+.drag {
+  width: 100%;
+  text-align: right;
+  padding: 1rem;
+}
+.drag img {
+  display: inline-block;
+  width: 41px;
+  height: auto;
+}
+
+.top_btn {
+  margin-inline: auto;
+  width: 100px;
+  height: auto;
+  margin-block-start: 2rem;
+  transition: 0.2s;
+}
+.top_btn:hover {
+  scale: 1.1;
 }
 
 img {
   max-width: 100%;
 }
 
+@media (width > 430px) {
+  html {
+    background-image: url(../images/pc_bg.png);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
 body {
   background-color: #faf8f4;
   color: #0a1d37;
   font-family: "Noto Sans JP", sans-serif;
+  max-width: 430px;
+}
+@media (width > 430px) {
+  body {
+    margin-inline: auto;
+    margin-block: 4rem;
+    border: 1px #4fc3f7 solid;
+    border-radius: 2rem;
+  }
+}
+
+.logo {
+  width: 125px;
+  height: auto;
+  margin-inline: auto;
 }
 
 .english {
@@ -463,4 +728,22 @@ body {
 .button a:hover {
   background-color: #ffc9b6;
   color: #0a1d37;
+}
+
+.sns_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sns_wrap p {
+  font-size: 1.5rem;
+}
+.sns_wrap .sns_icons {
+  display: flex;
+  gap: 2rem;
+}
+.sns_wrap .sns_icons img {
+  width: 30px;
+  height: 30px;
 }/*# sourceMappingURL=style.css.map */

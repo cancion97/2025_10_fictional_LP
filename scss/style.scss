@@ -9,12 +9,35 @@ img {
   max-width: 100%;
 }
 
+html {
+  @media (width > 430px) {
+    background-image: url(../images/pc_bg.png);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
 body {
   background-color: $bg_color;
   color: $text_color;
   font-family: $font_jp;
+  max-width: 430px;
+  @media (width > 430px) {
+    margin-inline: auto;
+    margin-block: 4rem;
+    border: 1px $accent_color02 solid;
+    border-radius: 2rem;
+  }
 }
 
+//ロゴ
+.logo {
+  width: 125px;
+  height: auto;
+  margin-inline: auto;
+}
+
+//英語の文章
 .english {
   font-family: $font_en;
   font-weight: bold;
@@ -39,6 +62,27 @@ body {
     &:hover {
       background-color: #ffc9b6;
       color: $text_color;
+    }
+  }
+}
+
+.sns_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .sns_icons {
+    display: flex;
+    gap: 2rem;
+
+    img {
+      width: 30px;
+      height: 30px;
     }
   }
 }

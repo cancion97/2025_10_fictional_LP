@@ -1,7 +1,36 @@
 @use "../base/variables" as *;
 
 footer {
+  margin-block-start: 4rem;
+  padding-block-start: 0.1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: $bg_color;
   background-image: url(../images/footer_bg.png);
-  background-size: contain;
+  background-size: auto;
+
+  @media (width > 430px) {
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  .logo {
+    margin-block-start: 4rem;
+  }
+
+  .sns_wrap {
+    margin-block-start: 3.5rem;
+  }
+
+  .footer_beer {
+    margin-block-start: 2.5rem;
+    width: 153px;
+    height: auto;
+  }
+
+  small {
+    margin-block-end: 2rem;
+    font-size: 14px;
+  }
 }

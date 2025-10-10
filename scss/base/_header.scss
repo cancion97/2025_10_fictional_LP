@@ -7,6 +7,9 @@ header {
   background-image: url(../images/main_image.png);
   background-size: cover;
   background-position: center;
+  @media (width > 430px) {
+    border-radius: 2rem 2rem 0 0;
+  }
   //アイコン+カート+ハンバーガー
   .header_wrap {
     margin-inline: 1rem;
@@ -40,6 +43,7 @@ header {
 
       // ハンバーガーメニュー
       .container {
+        z-index: 100;
         width: 30px;
         height: 30px;
         margin-block-start: 0.8rem;
@@ -132,4 +136,17 @@ header {
 }
 .dilate {
   filter: url(#dilate);
+}
+
+.scroll_wrap {
+  position: relative;
+}
+
+.scroll_arrow {
+  img {
+    position: absolute;
+    width: 32px;
+    right: 1rem;
+    bottom: 2rem;
+  }
 }
