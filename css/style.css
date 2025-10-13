@@ -295,9 +295,10 @@ header .header_wrap {
   justify-content: space-between;
 }
 header .header_wrap .icon_image {
+  display: block;
   margin-block-start: 0.3rem;
   width: 60px;
-  height: auto;
+  height: 60px;
   background-image: url(../images/icon.png);
   background-size: contain;
 }
@@ -305,6 +306,10 @@ header .header_wrap .icon_image:hover {
   background-image: url(../images/icon_cheers.png);
 }
 header .header_wrap .header_right {
+  position: fixed;
+  z-index: 1000;
+  top: 0.5rem;
+  right: 1rem;
   display: flex;
   gap: 30px;
 }
@@ -401,10 +406,12 @@ header .title_wrap .sub_title {
 header .dilate {
   filter: url(#dilate);
 }
-header .scroll_wrap {
+
+.scroll_wrap {
   position: relative;
 }
-header .scroll_arrow img {
+
+.scroll_arrow img {
   position: absolute;
   width: 32px;
   right: 1rem;
@@ -471,13 +478,21 @@ footer small {
 }
 .menu .title_wrap .main_title,
 .menu .title_wrap .sub_title {
+  line-height: 20px;
   margin: 0;
+}
+.menu .title_wrap .sub_title {
+  line-height: 56px;
+  letter-spacing: 0.2em;
+}
+.menu .title_wrap .dilate {
+  filter: url(#dilate);
 }
 .menu nav {
   position: relative;
 }
 .menu nav ul {
-  top: -220px;
+  top: -170px;
   right: 50%;
   transform: translateX(50%);
   position: absolute;
@@ -495,6 +510,9 @@ footer small {
 .menu nav ul li a {
   text-decoration: none;
   color: #0a1d37;
+}
+.menu .logo {
+  margin-block-start: 80px;
 }
 .menu .sns_wrap {
   padding-block-end: 2rem;

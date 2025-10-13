@@ -30,7 +30,15 @@
     }
     .main_title,
     .sub_title {
+      line-height: 20px;
       margin: 0; // h1, h2の余白もリセット }
+    }
+    .sub_title {
+      line-height: 56px;
+      letter-spacing: 0.2em;
+    }
+    .dilate {
+      filter: url(#dilate);
     }
   }
 
@@ -38,7 +46,7 @@
     position: relative;
 
     ul {
-      top: -220px;
+      top: -170px;
       right: 50%;
       transform: translateX(50%);
       position: absolute;
@@ -59,6 +67,10 @@
         }
       }
     }
+  }
+
+  .logo {
+    margin-block-start: 80px; // ← ulの高さ分を見ながら調整
   }
 
   .sns_wrap {

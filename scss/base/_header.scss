@@ -17,9 +17,10 @@ header {
     justify-content: space-between;
 
     .icon_image {
+      display: block;
       margin-block-start: 0.3rem;
       width: 60px;
-      height: auto;
+      height: 60px;
       background-image: url(../images/icon.png);
       background-size: contain;
       &:hover {
@@ -28,6 +29,10 @@ header {
     }
     // カートとハンバーガー右よせ
     .header_right {
+      position: fixed;
+      z-index: 1000;
+      top: 0.5rem;
+      right: 1rem;
       display: flex;
       gap: 30px;
 
@@ -139,17 +144,17 @@ header {
   .dilate {
     filter: url(#dilate);
   }
+}
 
-  .scroll_wrap {
-    position: relative;
-  }
+.scroll_wrap {
+  position: relative;
+}
 
-  .scroll_arrow {
-    img {
-      position: absolute;
-      width: 32px;
-      right: 1rem;
-      bottom: 2rem;
-    }
+.scroll_arrow {
+  img {
+    position: absolute;
+    width: 32px;
+    right: 1rem;
+    bottom: 2rem;
   }
 }
