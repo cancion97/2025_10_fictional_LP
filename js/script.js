@@ -5,12 +5,13 @@
 // https://developer.mozilla.org/ja/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API
 
 //ハンバーガーメニュー
-//ハンバーガーメニュー
+// ハンバーガーメニュー
 const menu = document.querySelector(".menu");
 const hbgButton = document.querySelector(".js-hbgButton");
 const hbgPath = document.querySelectorAll(".js-hbgPath");
-const cart = document.querySelector(".cart"); // ← カートを取得
+const carts = document.querySelectorAll(".cart"); // ← すべてのカートを取得
 
+// アニメーション設定
 let timingOpen = {
   iterations: 1,
   duration: 200,
@@ -24,6 +25,7 @@ let timingClose = {
   fill: "forwards",
 };
 
+// パスの形状
 let keyframeOpen = [
   {
     d: "path('M 0,20 C 20,20 20,20 40,20 S 60,20 80,20 S 100,20 120,20')",
@@ -36,6 +38,7 @@ let keyframeClose = [
   },
 ];
 
+// ハンバーガーメニュークリック
 hbgButton.addEventListener("click", () => {
   if (hbgButton.classList.contains("is-open")) {
     // 🔹 閉じるとき
@@ -44,8 +47,10 @@ hbgButton.addEventListener("click", () => {
     menu.classList.remove("active");
 
     // カートを表示
-    cart.style.opacity = "1";
-    cart.style.pointerEvents = "auto";
+    carts.forEach((c) => {
+      c.style.opacity = "1";
+      c.style.pointerEvents = "auto";
+    });
   } else {
     // 🔹 開くとき
     hbgPath.forEach((e) => e.animate(keyframeOpen, timingOpen));
@@ -53,12 +58,14 @@ hbgButton.addEventListener("click", () => {
     menu.classList.add("active");
 
     // カートを非表示
-    cart.style.opacity = "0";
-    cart.style.pointerEvents = "none";
+    carts.forEach((c) => {
+      c.style.opacity = "0";
+      c.style.pointerEvents = "none";
+    });
   }
 });
 
-//横スクロール
+// 横スクロール（レビューなど）
 const slider = document.querySelector(".horizontal_scroll");
 let isDown = false;
 let startX;
