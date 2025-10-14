@@ -278,21 +278,72 @@ progress {
   cursor: default;
 }
 
-header {
+header .header_container {
   height: 1000px;
   background-image: url(../images/main_image.png);
   background-size: cover;
   background-position: center;
 }
 @media (width > 430px) {
-  header {
+  header .header_container {
     border-radius: 2rem 2rem 0 0;
   }
 }
+header .pc_menu {
+  display: none;
+}
+@media (width > 750px) {
+  header .pc_menu {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+  header .pc_menu .icon_image {
+    display: block;
+    width: 60px;
+    height: 60px;
+    padding-block-end: 0.2rem;
+    background-image: url(../images/icon.png);
+    background-size: contain;
+  }
+  header .pc_menu .icon_image:hover {
+    background-image: url(../images/icon_cheers.png);
+  }
+  header .pc_menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+  header .pc_menu ul li {
+    list-style: none;
+    font-size: 1.5rem;
+  }
+  header .pc_menu ul li a {
+    text-decoration: none;
+    color: #0a1d37;
+  }
+  header .pc_menu .cart {
+    width: 20px;
+    right: 10px;
+    transition: opacity 0.6s ease;
+  }
+  header .pc_menu .cart img {
+    height: auto;
+  }
+}
 header .header_wrap {
+  padding-block-end: 8rem;
   margin-inline: 1rem;
   display: flex;
   justify-content: space-between;
+}
+@media (width > 750px) {
+  header .header_wrap {
+    display: none;
+  }
 }
 header .header_wrap .icon_image {
   display: block;
@@ -305,6 +356,14 @@ header .header_wrap .icon_image {
 header .header_wrap .icon_image:hover {
   background-image: url(../images/icon_cheers.png);
 }
+@media (width > 430px) {
+  header .header_wrap .icon_image {
+    position: fixed;
+    top: 0.2rem;
+    left: 1rem;
+    margin-block-start: 0;
+  }
+}
 header .header_wrap .header_right {
   position: fixed;
   z-index: 1000;
@@ -316,19 +375,24 @@ header .header_wrap .header_right {
 header .header_wrap .header_right .cart {
   width: 20px;
   right: 10px;
+  transition: opacity 0.6s ease;
 }
 header .header_wrap .header_right .cart img {
   margin-block-start: 1.5rem;
   height: auto;
 }
 header .header_wrap .header_right .container {
-  z-index: 100;
   width: 30px;
   height: 30px;
   margin-block-start: 0.8rem;
 }
+@media (width > 750px) {
+  header .header_wrap .header_right .container {
+    display: none;
+  }
+}
 header .header_wrap .header_right .hbgButton {
-  position: relative;
+  position: fixed;
   display: block;
   width: 30px;
   height: 30px;
@@ -379,11 +443,15 @@ header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--03 {
 }
 header .title_wrap {
   position: relative;
-  margin-block-start: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media (width > 750px) {
+  header .title_wrap {
+    margin-block-start: 8rem;
+  }
 }
 header .title_wrap .arch {
   position: absolute;
@@ -458,7 +526,7 @@ footer small {
   width: 100vw;
   height: 100vh;
   background-color: #faf8f4;
-  z-index: 5;
+  z-index: 100;
   transition: top 0.6s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -605,18 +673,62 @@ section .worldwide_line img {
 }
 
 .wave {
+  position: relative;
   margin-block: 4rem;
+  display: block;
+  z-index: 10;
+}
+
+.une_wrap {
+  z-index: -1;
+  position: relative;
+}
+@media (width > 430px) {
+  .une_wrap {
+    overflow: hidden;
+  }
+}
+.une_wrap .uneune {
+  position: absolute;
+}
+.une_wrap .une01 {
+  width: 330px;
+  height: auto;
+  left: -62px;
+  top: -650px;
+}
+.une_wrap .une02 {
+  width: 343px;
+  height: auto;
+  left: 150px;
+  top: 300px;
+}
+.une_wrap .une03 {
+  width: 371px;
+  height: auto;
+  left: -113px;
+  top: 920px;
+}
+.une_wrap .une04 {
+  width: 420px;
+  height: auto;
+  left: 132px;
+  top: 1800px;
 }
 
 .chart {
   width: 320px;
   margin-inline: auto;
 }
+.chart img {
+  z-index: 5;
+}
 
 .chart_text {
   margin-block-start: 3rem;
   font-weight: bold;
   text-align: center;
+  position: relative;
 }
 
 .review_title {
@@ -720,10 +832,30 @@ body {
 @media (width > 430px) {
   body {
     margin-inline: auto;
-    margin-block: 4rem;
+    margin-block: 5rem;
     border: 1px #4fc3f7 solid;
     border-radius: 2rem;
   }
+}
+@media (width > 750px) {
+  body {
+    margin-inline-start: 16%;
+    margin-block: 5rem;
+    border: 1px #4fc3f7 solid;
+    border-radius: 2rem;
+  }
+}
+
+section {
+  position: relative;
+}
+
+section,
+p,
+div,
+header,
+footer {
+  z-index: 10;
 }
 
 .logo {

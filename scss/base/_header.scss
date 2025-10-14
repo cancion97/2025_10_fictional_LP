@@ -3,18 +3,76 @@
 //ヘッダー
 
 header {
-  height: 1000px;
-  background-image: url(../images/main_image.png);
-  background-size: cover;
-  background-position: center;
-  @media (width > 430px) {
-    border-radius: 2rem 2rem 0 0;
+  .header_container {
+    height: 1000px;
+    background-image: url(../images/main_image.png);
+    background-size: cover;
+    background-position: center;
+    @media (width > 430px) {
+      border-radius: 2rem 2rem 0 0;
+    }
+  }
+
+  //PC版メニュー
+  .pc_menu {
+    display: none;
+
+    @media (width > 750px) {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2rem;
+
+      .icon_image {
+        display: block;
+        width: 60px;
+        height: 60px;
+        padding-block-end: 0.2rem;
+        background-image: url(../images/icon.png);
+        background-size: contain;
+        &:hover {
+          background-image: url(../images/icon_cheers.png);
+        }
+      }
+
+      ul {
+        display: flex;
+        gap: 2rem;
+
+        li {
+          list-style: none;
+          font-size: 1.5rem;
+
+          a {
+            text-decoration: none;
+            color: $text_color;
+          }
+        }
+      }
+      .cart {
+        width: 20px;
+        right: 10px;
+        transition: opacity 0.6s ease;
+
+        img {
+          height: auto;
+        }
+      }
+    }
   }
   //アイコン+カート+ハンバーガー
   .header_wrap {
+    padding-block-end: 8rem;
     margin-inline: 1rem;
     display: flex;
     justify-content: space-between;
+
+    @media (width > 750px) {
+      display: none;
+    }
 
     .icon_image {
       display: block;
@@ -25,6 +83,12 @@ header {
       background-size: contain;
       &:hover {
         background-image: url(../images/icon_cheers.png);
+      }
+      @media (width > 430px) {
+        position: fixed;
+        top: 0.2rem;
+        left: 1rem;
+        margin-block-start: 0;
       }
     }
     // カートとハンバーガー右よせ
@@ -39,6 +103,8 @@ header {
       .cart {
         width: 20px;
         right: 10px;
+        transition: opacity 0.6s ease;
+
         img {
           margin-block-start: 1.5rem;
 
@@ -48,13 +114,15 @@ header {
 
       // ハンバーガーメニュー
       .container {
-        z-index: 100;
         width: 30px;
         height: 30px;
         margin-block-start: 0.8rem;
+        @media (width > 750px) {
+          display: none;
+        }
       }
       .hbgButton {
-        position: relative;
+        position: fixed;
         display: block;
         width: 30px;
         height: 30px;
@@ -115,11 +183,14 @@ header {
   //タイトル
   .title_wrap {
     position: relative;
-    margin-block-start: 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (width > 750px) {
+      margin-block-start: 8rem;
+    }
 
     .arch {
       position: absolute;

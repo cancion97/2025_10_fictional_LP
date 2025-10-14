@@ -22,12 +22,31 @@ body {
   color: $text_color;
   font-family: $font_jp;
   max-width: 430px;
+
   @media (width > 430px) {
     margin-inline: auto;
-    margin-block: 4rem;
+    margin-block: 5rem;
     border: 1px $accent_color02 solid;
     border-radius: 2rem;
   }
+  @media (width > 750px) {
+    margin-inline-start: 16%;
+    margin-block: 5rem;
+    border: 1px $accent_color02 solid;
+    border-radius: 2rem;
+  }
+}
+
+section {
+  position: relative;
+}
+
+section,
+p,
+div,
+header,
+footer {
+  z-index: 10;
 }
 
 //ロゴ

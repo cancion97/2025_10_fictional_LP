@@ -10,7 +10,7 @@
   width: 100vw;
   height: 100vh;
   background-color: $bg_color;
-  z-index: 5;
+  z-index: 100;
   transition: top 0.6s ease-in-out; // ←滑らかに下がる
   display: flex;
   flex-direction: column;
@@ -187,19 +187,67 @@ section {
 
 //波線
 .wave {
+  position: relative;
   margin-block: 4rem;
+  display: block;
+  z-index: 10;
+}
+
+//うねうね
+.une_wrap {
+  z-index: -1;
+  position: relative;
+  @media (width > 430px) {
+    overflow: hidden;
+  }
+
+  .uneune {
+    position: absolute;
+  }
+
+  .une01 {
+    width: 330px;
+    height: auto;
+    left: -62px;
+    top: -650px;
+  }
+
+  .une02 {
+    width: 343px;
+    height: auto;
+    left: 150px;
+    top: 300px;
+  }
+
+  .une03 {
+    width: 371px;
+    height: auto;
+    left: -113px;
+    top: 920px;
+  }
+
+  .une04 {
+    width: 420px;
+    height: auto;
+    left: 132px;
+    top: 1800px;
+  }
 }
 
 //味のチャート
 .chart {
   width: 320px;
   margin-inline: auto;
+  img {
+    z-index: 5;
+  }
 }
 
 .chart_text {
   margin-block-start: 3rem;
   font-weight: bold;
   text-align: center;
+  position: relative;
 }
 
 //レビュー
