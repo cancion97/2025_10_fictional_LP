@@ -830,16 +830,6 @@ section .worldwide_line img {
   padding-inline: 1rem;
   color: #0a1d37;
 }
-@media (width > 430px) {
-  #cart_wrap {
-    background-color: #faf8f4;
-  }
-}
-@media (width > 750px) {
-  #cart_wrap {
-    background-color: #faf8f4;
-  }
-}
 #cart_wrap body {
   background-image: none;
   background-color: #faf8f4;
@@ -850,17 +840,44 @@ section .worldwide_line img {
 #cart_wrap .header_wrap {
   padding-block-end: 2rem;
 }
+@media (width > 430px) {
+  #cart_wrap .cart_main {
+    padding-block: 5rem;
+  }
+}
 #cart_wrap .cart_main img {
   border-radius: 1rem;
   border: 1px #0a1d37 solid;
   overflow: hidden;
   width: 100%;
   height: 100%;
+  max-width: 604px;
+}
+@media (width > 750px) {
+  #cart_wrap .cart_main img {
+    flex-basis: 57%;
+  }
 }
 #cart_wrap .cart_text {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+@media (width > 750px) {
+  #cart_wrap .cart_text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (width > 750px) {
+  #cart_wrap .cart_text .cart_textbox {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 37%;
+    gap: 4rem;
+  }
 }
 #cart_wrap .cart_text .cart_title {
   font-size: 1.5rem;
@@ -868,6 +885,12 @@ section .worldwide_line img {
 #cart_wrap .cart_text .price_wrap {
   display: flex;
   justify-content: space-between;
+}
+@media (width > 750px) {
+  #cart_wrap .cart_text .price_wrap {
+    display: flex;
+    flex-direction: column;
+  }
 }
 #cart_wrap .cart_text .price_wrap .price {
   font-size: 1.5rem;
@@ -976,6 +999,7 @@ img {
     background-image: url(../images/pc_bg.png);
     background-attachment: fixed;
     background-size: cover;
+    padding-block: 2rem;
   }
 }
 
