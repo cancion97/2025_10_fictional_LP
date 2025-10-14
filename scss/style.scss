@@ -9,7 +9,7 @@ img {
   max-width: 100%;
 }
 
-html {
+.page_top {
   @media (width > 430px) {
     background-image: url(../images/pc_bg.png);
     background-attachment: fixed;
@@ -18,22 +18,26 @@ html {
 }
 
 body {
-  background-color: $bg_color;
   color: $text_color;
   font-family: $font_jp;
-  max-width: 430px;
 
-  @media (width > 430px) {
-    margin-inline: auto;
-    margin-block: 5rem;
-    border: 1px $accent_color02 solid;
-    border-radius: 2rem;
-  }
-  @media (width > 750px) {
-    margin-inline-start: 16%;
-    margin-block: 5rem;
-    border: 1px $accent_color02 solid;
-    border-radius: 2rem;
+  .main_wrap {
+    max-width: 430px;
+    width: 100vw;
+    background-color: $bg_color;
+
+    @media (width > 430px) {
+      margin-inline: auto;
+      margin-block: 5rem;
+      border: 1px $accent_color02 solid;
+      border-radius: 2rem;
+    }
+    @media (width > 750px) {
+      margin-inline-start: 16%;
+      margin-block: 5rem;
+      border: 1px $accent_color02 solid;
+      border-radius: 2rem;
+    }
   }
 }
 
