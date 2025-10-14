@@ -842,7 +842,7 @@ section .worldwide_line img {
 }
 @media (width > 430px) {
   #cart_wrap .cart_main {
-    padding-block: 5rem;
+    padding-block-start: 5rem;
   }
 }
 #cart_wrap .cart_main img {
@@ -868,8 +868,14 @@ section .worldwide_line img {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
   }
+}
+#cart_wrap .cart_text .cart_textbox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 @media (width > 750px) {
   #cart_wrap .cart_text .cart_textbox {

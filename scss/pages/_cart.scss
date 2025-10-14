@@ -20,7 +20,7 @@
 
   .cart_main {
     @media (width > 430px) {
-      padding-block: 5rem;
+      padding-block-start: 5rem;
     }
     img {
       border-radius: 1rem;
@@ -45,10 +45,14 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 2rem;
     }
 
     .cart_textbox {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
       @media (width > 750px) {
         display: flex;
         flex-direction: column;
