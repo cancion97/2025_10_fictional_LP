@@ -23,6 +23,7 @@ body {
   font-family: $font_jp;
 
   .main_wrap {
+    overflow: hidden;
     max-width: 430px;
     width: 100vw;
     background-color: $bg_color;
@@ -74,6 +75,7 @@ footer {
   align-items: center;
   justify-content: center;
   a {
+    font-weight: bold;
     border-radius: 2rem;
     border: 1px solid $text_color;
     background-color: $accent_color01;

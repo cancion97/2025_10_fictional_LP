@@ -9,8 +9,13 @@
       content="神戸のクラフトビールのランディングページです"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- スワイパー -->
+    <link rel="stylesheet" href="path/swiper.min.css" />
     <!-- GoogleやYahooなどの検索エンジンに検索されなくするメタタグ -->
     <meta name="robots" content="noindex,nofollow" />
+
+    <!-- スワイパー -->
+    <script src="path/swiper-bundle.min.js"></script>
     <script type="module" src="js/script.js"></script>
   </head>
   <body>
@@ -18,16 +23,17 @@
       <!-- ヘッダー -->
       <header>
         <div class="pc_menu">
-          <div class="icon_image"></div>
+          <a href="index.html" class="icon_image"></a>
+
           <nav>
             <ul class="english">
               <li><a href="index.html">Top</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Cart</a></li>
+              <li><a href="about_us.html">About us</a></li>
+              <li><a href="cart.html">Cart</a></li>
             </ul>
           </nav>
           <div class="cart">
-            <a href="#"><img src="images/cart.png" alt="カート" /></a>
+            <a href="cart.html"><img src="images/cart.png" alt="カート" /></a>
           </div>
         </div>
         <div class="c_header_container">
@@ -123,8 +129,8 @@
         <nav>
           <ul class="english">
             <li><a href="index.html">Top</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Cart</a></li>
+            <li><a href="about_us.html">About us</a></li>
+            <li><a href="cart.html">Cart</a></li>
           </ul>
         </nav>
         <div class="logo"><img src="images/logo.png" alt="ロゴ" /></div>
@@ -245,6 +251,24 @@
     </div>
 
     <!--  フッター -->
+    <div class="sp_footer">
+      <div class="logo"><img src="images/logo.png" alt="ロゴ" /></div>
+      <div class="sns_wrap">
+        <p class="sns_text english">Follow us!</p>
+        <div class="sns_icons">
+          <img src="images/instagram.png" alt="インスタグラム" /><img
+            src="images/twitter.png"
+            alt="エックス"
+          /><img src="images/tiktok.png" alt="ティックトック" />
+        </div>
+      </div>
+      <div class="footer_beer">
+        <img src="images/footer_beer.png" alt="ビールを注いでるイラスト" />
+      </div>
+      <small class="english">copyright 2025</small>
+    </div>
+
+    <!-- pc版フッター -->
     <footer class="cart_footer">
       <!-- HYOGO アーチ -->
       <div class="title_and_beer">
@@ -300,7 +324,7 @@
         </div>
       </div>
       <div class="footer_text_wrap">
-        <div class="footer_textbox">
+        <div class="footer_textbox recruit">
           <p class="footer_title english">Recruit</p>
           <ul>
             <li>- 求人情報</li>

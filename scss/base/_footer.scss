@@ -1,6 +1,7 @@
 @use "../base/variables" as *;
 
-footer {
+footer,
+.sp_footer {
   margin-block-start: 4rem;
   padding-block-start: 0.1px;
   display: flex;
@@ -35,56 +36,95 @@ footer {
   }
 }
 
-.cart_footer {
-  background-image: url(../images/pc_footer_bg.png);
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 6rem 2rem;
-  gap: 4rem;
+//カートSPフッター
+.sp_footer {
   border-radius: 0;
+  background-size: cover;
 
-  //タイトル
-  .title_wrap {
-    position: relative;
+  @media (width > 500px) {
+    background-image: url(../../images/tb_footer_bg.png);
+  }
+  @media (width > 750px) {
+    display: none;
+  }
+}
+
+//pc版カートフッター
+.cart_footer {
+  display: none;
+
+  @media (width > 750px) {
+    background-image: url(../images/pc_footer_bg.png);
+    background-color: $bg_color;
+    aspect-ratio: 2.7/1;
+    width: 100%;
+    background-size: cover;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
+    padding: 6rem 3rem 3rem 0;
 
-    @media (width > 430px) {
-      margin-block-start: 0;
+    border-radius: 0;
+
+    //タイトル
+    .title_and_beer {
+      position: relative;
     }
 
-    .arch {
+    .title_wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @media (width > 430px) {
+        margin-block-start: 0;
+      }
+
+      .arch {
+        position: absolute;
+        top: -20%;
+      }
+
+      .main_title {
+        font-family: $font_en;
+        margin-block-start: 1rem;
+        font-size: 40px;
+      }
+      .sub_title {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        top: 85px;
+        white-space: nowrap;
+        font-weight: bold;
+        letter-spacing: 0.2em;
+        font-size: 24px; /* 文字のサイズ */
+      }
+    }
+    .dilate {
+      filter: url(#dilate);
+    }
+
+    .footer_beer {
       position: absolute;
-      top: -40%;
+      bottom: -60px;
+      left: 75px;
     }
 
-    .main_title {
-      font-family: $font_en;
-      font-size: 40px;
+    .footer_text_wrap {
+      display: flex;
+      gap: 3rem;
+      margin-inline-start: 2rem;
+      margin-inline-end: 5rem;
+      .recruit {
+        @media (width < 900px) {
+          display: none;
+        }
+      }
     }
-    .sub_title {
-      position: absolute;
-      right: 50%;
-      transform: translateX(50%);
-      top: 65px;
-      white-space: nowrap;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      font-size: 24px; /* 文字のサイズ */
-    }
-  }
-  .dilate {
-    filter: url(#dilate);
-  }
-
-  .footer_text_wrap {
-    display: flex;
-    gap: 3rem;
 
     .footer_textbox {
       display: flex;
@@ -103,8 +143,12 @@ footer {
         li {
           list-style: none;
           line-height: 1.8rem;
+          font-size: 14px;
         }
       }
     }
+  }
+  .sns_wrap {
+    margin-block-start: 0;
   }
 }

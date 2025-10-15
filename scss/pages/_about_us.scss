@@ -1,0 +1,75 @@
+@use "../base/variables" as *;
+
+#about_us_body {
+  background-image: url(../images/sp_about_us_bg.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+  @media (width > 750px) {
+    background-color: $bg_color;
+    background-image: none;
+  }
+
+  .about_us_titlewrap {
+    position: relative;
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .une05 {
+      display: none;
+
+      @media (width > 750px) {
+        display: block;
+        width: 164px;
+        height: 162px;
+        position: absolute;
+        z-index: -50;
+        left: 20px;
+        top: -50px;
+      }
+    }
+
+    @media (width > 750px) {
+      padding-block-start: 0;
+      padding-block-end: 5rem;
+      flex-direction: row;
+      margin-inline: auto;
+      width: 400px;
+      gap: 2rem;
+    }
+
+    .about_us_title {
+      line-height: 2.5rem;
+    }
+  }
+
+  .header_container {
+    .header_wrap {
+      padding-block-end: 0;
+    }
+    background-image: none;
+    padding-block-start: 0;
+    width: auto;
+    height: 150px;
+  }
+
+  .swiper {
+    overflow: visible;
+    .swiper-wrapper {
+      display: flex;
+      gap: 2rem;
+      padding-block: 2rem;
+
+      .swiper-slide {
+        img {
+          width: 350px;
+          height: 525px;
+        }
+      }
+    }
+  }
+}

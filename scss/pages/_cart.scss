@@ -1,4 +1,7 @@
 @use "../base/variables" as *;
+html {
+  background-color: $bg_color;
+}
 
 #cart_wrap {
   background-color: $bg_color;
@@ -7,7 +10,6 @@
   color: $text_color;
 
   body {
-    background-image: none;
     background-color: $bg_color;
     color: $text_color;
     font-family: $font_jp;
@@ -16,11 +18,25 @@
 
   .header_wrap {
     padding-block-end: 2rem;
+
+    a.icon_image {
+      display: block;
+      width: 60px;
+      height: 60px;
+      background-image: url(../images/icon.png);
+      background-size: contain;
+      img {
+        margin-block-end: 0.5rem;
+      }
+      &:hover {
+        background-image: url(../images/icon_cheers.png);
+      }
+    }
   }
 
   .cart_main {
     @media (width > 430px) {
-      padding-block-start: 5rem;
+      margin-block-start: 5rem;
     }
     img {
       border-radius: 1rem;
