@@ -864,7 +864,7 @@ section .worldwide_line img {
 .review_title {
   display: block;
   text-align: center;
-  margin-block-end: 2rem;
+  margin-block-end: 3rem;
 }
 
 .review {
