@@ -65,37 +65,6 @@ hbgButton.addEventListener("click", () => {
   }
 });
 
-// 横スクロール（レビューなど）
-// const slider = document.querySelector(".horizontal_scroll");
-// let isDown = false;
-// let startX;
-// let scrollLeft;
-
-// slider.addEventListener("mousedown", (e) => {
-//   isDown = true;
-//   slider.classList.add("active"); // grabbing に切替
-//   startX = e.pageX - slider.offsetLeft;
-//   scrollLeft = slider.scrollLeft;
-// });
-
-// slider.addEventListener("mouseleave", () => {
-//   isDown = false;
-//   slider.classList.remove("active"); // grab に戻す
-// });
-
-// slider.addEventListener("mouseup", () => {
-//   isDown = false;
-//   slider.classList.remove("active"); // grab に戻す
-// });
-
-// slider.addEventListener("mousemove", (e) => {
-//   if (!isDown) return;
-//   e.preventDefault();
-//   const x = e.pageX - slider.offsetLeft;
-//   const walk = (x - startX) * 1; // 1はスクロールスピード
-//   slider.scrollLeft = scrollLeft - walk;
-// });
-
 //swiper
 
 window.addEventListener("load", () => {
@@ -103,7 +72,7 @@ window.addEventListener("load", () => {
     loop: true, // 無限ループ
     slidesPerView: "auto",
     allowTouchMove: false,
-    speed: 10000, // スピード（遅くしたい場合は20000などに）
+    speed: 6000, // スピード（遅くしたい場合は20000などに）
     freeMode: true, // 自由移動モードON
     freeModeMomentum: false,
 
@@ -114,27 +83,24 @@ window.addEventListener("load", () => {
   });
 
   // スライドを途切れず動かすには timing-function を linear に
-  const wrapper = document.querySelector(".swiper-wrapper");
+  const wrapper = document.querySelector(".swiper .swiper-wrapper");
   wrapper.style.transitionTimingFunction = "linear";
 });
 
 //レビュー
-const swiper = new Swiper(".swiper .review", {
-  loop: true, // ループ
-  speed: 1500, // 少しゆっくり(デフォルトは300)
-  autoplay: {
-    // 自動再生
-    delay: 1000, // 1秒後に次のスライド
-    disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-  },
-  // ページネーション
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // 前後の矢印
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+window.addEventListener("load", () => {
+  const swiper = new Swiper(".review", {
+    loop: true, // 無限ループ
+    slidesPerView: 1, // 常に1枚ずつ表示
+    spaceBetween: 32, // スライドの間隔
+    speed: 1000, // 切り替えアニメーション速度（ミリ秒）
+    autoplay: {
+      delay: 2500, // 2.5秒ごとに次へ
+      disableOnInteraction: false, // 操作しても止まらない
+    },
+    allowTouchMove: true, // ドラッグ/スワイプOK
+    grabCursor: true, // カーソルを「手の形」に
+    centeredSlides: true, // 中央寄せ（好みで）
+    loopAdditionalSlides: 2, // 無限ループ時の補助スライド
+  });
 });

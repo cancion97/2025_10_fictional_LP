@@ -254,32 +254,48 @@ section {
 .review_title {
   display: block;
   text-align: center;
+  margin-block-end: 2rem;
 }
 
 //横スクロール
 .review {
   width: 100%;
-  max-width: 430px; /* スマホ幅制限 */
+  max-width: 100%; // レビュー枠のサイズ調整
   margin: 0 auto;
   overflow: hidden;
-}
 
-.review_wrapper {
-  padding-block: 2rem;
-  position: relative;
-  display: flex;
-  gap: 4.5rem;
-  align-items: center;
-  justify-content: center;
-}
+  .swiper-slide {
+    text-align: center;
 
-#review_slide {
-  width: 280px;
-  height: auto;
-  img {
-    width: 100%;
+    img {
+      width: 366px;
+    }
   }
 }
+
+// .review {
+//   width: 100%;
+//   max-width: 430px; /* スマホ幅制限 */
+//   margin: 0 auto;
+//   overflow: hidden;
+// }
+
+// .review_wrapper {
+//   padding-block: 2rem;
+//   position: relative;
+//   display: flex;
+//   gap: 4.5rem;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .review_slide {
+//   width: 280px;
+//   height: auto;
+//   img {
+//     width: 100%;
+//   }
+// }
 
 .drag {
   width: 100%;

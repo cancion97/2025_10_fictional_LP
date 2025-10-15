@@ -42,7 +42,7 @@ footer,
   background-size: cover;
 
   @media (width > 500px) {
-    background-image: url(../../images/tb_footer_bg.png);
+    background-image: url(../images/tb_footer_bg.png);
   }
   @media (width > 750px) {
     display: none;
@@ -63,7 +63,7 @@ footer,
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
-    padding: 6rem 3rem 3rem 0;
+    padding: 6rem 3rem 0 0;
 
     border-radius: 0;
 
