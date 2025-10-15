@@ -875,6 +875,7 @@ section .worldwide_line img {
 }
 .review .swiper-slide {
   text-align: center;
+  width: 100%;
 }
 .review .swiper-slide img {
   width: 366px;

@@ -93,9 +93,9 @@ window.addEventListener("load", () => {
     loop: true, // 無限ループ
     slidesPerView: 1, // 常に1枚ずつ表示
     spaceBetween: 32, // スライドの間隔
-    speed: 1000, // 切り替えアニメーション速度（ミリ秒）
+    speed: 1500, // 切り替えアニメーション速度（ミリ秒）
     autoplay: {
-      delay: 2500, // 2.5秒ごとに次へ
+      delay: 3000, // 2.5秒ごとに次へ
       disableOnInteraction: false, // 操作しても止まらない
     },
     allowTouchMove: true, // ドラッグ/スワイプOK
