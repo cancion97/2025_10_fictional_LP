@@ -257,56 +257,28 @@ section {
 }
 
 //横スクロール
-.review_container {
+.review {
   width: 100%;
   max-width: 430px; /* スマホ幅制限 */
   margin: 0 auto;
   overflow: hidden;
 }
 
-.contents {
+.review_wrapper {
+  padding-block: 2rem;
   position: relative;
   display: flex;
+  gap: 4.5rem;
   align-items: center;
   justify-content: center;
 }
 
-.horizontal_scroll {
-  display: flex;
-  overflow-x: auto; /* 横スクロール有効 */
-  scroll-snap-type: x mandatory; /* スナップスクロール */
-  -webkit-overflow-scrolling: touch;
-  padding: 2rem 3rem;
-  cursor: grab; // 通常時は grab
-}
-
-.horizontal_scroll.active {
-  cursor: grabbing; // ドラッグ中は grabbing
-}
-
-.picture {
-  width: 279px;
-  height: 460px;
-  display: flex;
-  gap: 4.5rem;
-  flex-shrink: 0;
-  align-items: center;
-  &::after {
-    content: "";
-    flex: 0 0 140px; /* 右端余白 */
+#review_slide {
+  width: 280px;
+  height: auto;
+  img {
+    width: 100%;
   }
-}
-
-.picture img {
-  flex-shrink: 0;
-  scroll-snap-align: center;
-}
-
-.horizontal_scroll::-webkit-scrollbar {
-  display: none;
-}
-.horizontal_scroll {
-  scroll-behavior: smooth;
 }
 
 .drag {

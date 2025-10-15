@@ -564,7 +564,7 @@ footer small,
     background-size: cover;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
     padding: 6rem 3rem 3rem 0;
     border-radius: 0;
@@ -866,57 +866,28 @@ section .worldwide_line img {
   text-align: center;
 }
 
-.review_container {
+.review {
   width: 100%;
   max-width: 430px; /* スマホ幅制限 */
   margin: 0 auto;
   overflow: hidden;
 }
 
-.contents {
+.review_wrapper {
+  padding-block: 2rem;
   position: relative;
   display: flex;
+  gap: 4.5rem;
   align-items: center;
   justify-content: center;
 }
 
-.horizontal_scroll {
-  display: flex;
-  overflow-x: auto; /* 横スクロール有効 */
-  scroll-snap-type: x mandatory; /* スナップスクロール */
-  -webkit-overflow-scrolling: touch;
-  padding: 2rem 3rem;
-  cursor: grab;
+#review_slide {
+  width: 280px;
+  height: auto;
 }
-
-.horizontal_scroll.active {
-  cursor: grabbing;
-}
-
-.picture {
-  width: 279px;
-  height: 460px;
-  display: flex;
-  gap: 4.5rem;
-  flex-shrink: 0;
-  align-items: center;
-}
-.picture::after {
-  content: "";
-  flex: 0 0 140px; /* 右端余白 */
-}
-
-.picture img {
-  flex-shrink: 0;
-  scroll-snap-align: center;
-}
-
-.horizontal_scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.horizontal_scroll {
-  scroll-behavior: smooth;
+#review_slide img {
+  width: 100%;
 }
 
 .drag {
@@ -1187,16 +1158,24 @@ html {
   padding-block-end: 0;
 }
 #about_us_body .swiper {
-  overflow: visible;
-  width: 140vw;
+  display: none;
 }
-#about_us_body .swiper .swiper-wrapper {
-  display: flex;
-  gap: 2rem;
-  padding-block: 2rem;
-}
-#about_us_body .swiper .swiper-wrapper .swiper-slide img {
-  width: 350px;
+@media (width > 750px) {
+  #about_us_body .swiper {
+    overflow: visible;
+    display: block;
+  }
+  #about_us_body .swiper .swiper-wrapper {
+    display: flex;
+    gap: 2rem;
+    padding-block: 2rem;
+  }
+  #about_us_body .swiper .swiper-wrapper .swiper-slide {
+    width: 20vw;
+  }
+  #about_us_body .swiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+  }
 }
 
 img {

@@ -59,17 +59,22 @@
   }
 
   .swiper {
-    overflow: visible;
-    width: 140vw;
+    display: none;
 
-    .swiper-wrapper {
-      display: flex;
-      gap: 2rem;
-      padding-block: 2rem;
+    @media (width > 750px) {
+      overflow: visible;
+      display: block;
+      .swiper-wrapper {
+        display: flex;
+        gap: 2rem;
+        padding-block: 2rem;
 
-      .swiper-slide {
-        img {
-          width: 350px;
+        .swiper-slide {
+          width: 20vw;
+
+          img {
+            width: 100%;
+          }
         }
       }
     }

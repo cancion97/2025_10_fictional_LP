@@ -10,12 +10,14 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <!-- スワイパー -->
-    <link rel="stylesheet" href="path/swiper.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- GoogleやYahooなどの検索エンジンに検索されなくするメタタグ -->
     <meta name="robots" content="noindex,nofollow" />
 
-    <!-- スワイパー -->
-    <script src="path/swiper-bundle.min.js"></script>
     <script type="module" src="js/script.js"></script>
   </head>
   <div class="page_top">
@@ -293,22 +295,33 @@
           <section>
             <h2 class="review_title">SNSで話題！</h2>
             <!-- 横スクロール -->
-            <section class="review_container" id="scroll">
-              <div class="contents">
-                <div class="horizontal_scroll">
-                  <div class="picture">
-                    <img src="images/review01.png" alt="レビュー" />
-                    <img src="images/review02.png" alt="レビュー" />
-                    <img src="images/review03.png" alt="レビュー" />
-                    <img src="images/review04.png" alt="レビュー" />
-                  </div>
+            <!-- Slider main container -->
+            <div class="swiper review">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper review_wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide" id="review_slide">
+                  <img src="images/review01.webp" alt="レビュー" />
+                </div>
+                <div class="swiper-slide" id="review_slide">
+                  <img src="images/review02.webp" alt="レビュー" />
+                </div>
+                <div class="swiper-slide" id="review_slide">
+                  <img src="images/review03.webp" alt="レビュー" />
+                </div>
+                <div class="swiper-slide" id="review_slide">
+                  <img src="images/review04.webp" alt="レビュー" />
                 </div>
               </div>
-              <div class="drag">
-                <img src="images/drag.png" alt="ドラッグ" />
-              </div>
-            </section>
-            <div class="button"><a href="cart.html">購入する</a></div>
+            </div>
+
+            <div class="drag">
+              <img src="images/drag.png" alt="ドラッグ" />
+            </div>
+
+            <div class="button">
+              <a href="cart.html">購入する</a>
+            </div>
           </section>
           <div class="wave"><img src="images/wave.png" alt="波線" /></div>
           <div class="top_btn">
@@ -336,6 +349,9 @@
           <small class="english">copyright 2025</small>
         </footer>
       </div>
+
+      <!-- スワイパー -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </body>
   </div>
 </html>

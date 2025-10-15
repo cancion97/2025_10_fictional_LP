@@ -66,46 +66,75 @@ hbgButton.addEventListener("click", () => {
 });
 
 // 横スクロール（レビューなど）
-const slider = document.querySelector(".horizontal_scroll");
-let isDown = false;
-let startX;
-let scrollLeft;
+// const slider = document.querySelector(".horizontal_scroll");
+// let isDown = false;
+// let startX;
+// let scrollLeft;
 
-slider.addEventListener("mousedown", (e) => {
-  isDown = true;
-  slider.classList.add("active"); // grabbing に切替
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
+// slider.addEventListener("mousedown", (e) => {
+//   isDown = true;
+//   slider.classList.add("active"); // grabbing に切替
+//   startX = e.pageX - slider.offsetLeft;
+//   scrollLeft = slider.scrollLeft;
+// });
 
-slider.addEventListener("mouseleave", () => {
-  isDown = false;
-  slider.classList.remove("active"); // grab に戻す
-});
+// slider.addEventListener("mouseleave", () => {
+//   isDown = false;
+//   slider.classList.remove("active"); // grab に戻す
+// });
 
-slider.addEventListener("mouseup", () => {
-  isDown = false;
-  slider.classList.remove("active"); // grab に戻す
-});
+// slider.addEventListener("mouseup", () => {
+//   isDown = false;
+//   slider.classList.remove("active"); // grab に戻す
+// });
 
-slider.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 1; // 1はスクロールスピード
-  slider.scrollLeft = scrollLeft - walk;
-});
+// slider.addEventListener("mousemove", (e) => {
+//   if (!isDown) return;
+//   e.preventDefault();
+//   const x = e.pageX - slider.offsetLeft;
+//   const walk = (x - startX) * 1; // 1はスクロールスピード
+//   slider.scrollLeft = scrollLeft - walk;
+// });
 
 //swiper
-const initSwiper = () => {
-  const mySwiper = new Swiper(".card05 .swiper", {
-    speed: 8000,
+
+window.addEventListener("load", () => {
+  new Swiper(".swiper", {
+    loop: true, // 無限ループ
+    slidesPerView: "auto",
+    allowTouchMove: false,
+    speed: 10000, // スピード（遅くしたい場合は20000などに）
+    freeMode: true, // 自由移動モードON
+    freeModeMomentum: false,
+
     autoplay: {
       delay: 0,
+      disableOnInteraction: false,
     },
   });
-};
 
-window.addEventListener("load", function () {
-  initSwiper(); // ページ読み込み後に初期化
+  // スライドを途切れず動かすには timing-function を linear に
+  const wrapper = document.querySelector(".swiper-wrapper");
+  wrapper.style.transitionTimingFunction = "linear";
+});
+
+//レビュー
+const swiper = new Swiper(".swiper .review", {
+  loop: true, // ループ
+  speed: 1500, // 少しゆっくり(デフォルトは300)
+  autoplay: {
+    // 自動再生
+    delay: 1000, // 1秒後に次のスライド
+    disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+  },
+  // ページネーション
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  // 前後の矢印
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
