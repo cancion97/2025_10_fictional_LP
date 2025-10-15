@@ -1139,6 +1139,7 @@ html {
   #about_us_body {
     background-color: #faf8f4;
     background-image: none;
+    height: auto;
   }
 }
 #about_us_body .about_us_titlewrap {
@@ -1187,6 +1188,7 @@ html {
 }
 #about_us_body .swiper {
   overflow: visible;
+  width: 140vw;
 }
 #about_us_body .swiper .swiper-wrapper {
   display: flex;
@@ -1195,7 +1197,6 @@ html {
 }
 #about_us_body .swiper .swiper-wrapper .swiper-slide img {
   width: 350px;
-  height: 525px;
 }
 
 img {

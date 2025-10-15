@@ -9,6 +9,7 @@
   @media (width > 750px) {
     background-color: $bg_color;
     background-image: none;
+    height: auto;
   }
 
   .about_us_titlewrap {
@@ -59,6 +60,8 @@
 
   .swiper {
     overflow: visible;
+    width: 140vw;
+
     .swiper-wrapper {
       display: flex;
       gap: 2rem;
@@ -67,7 +70,6 @@
       .swiper-slide {
         img {
           width: 350px;
-          height: 525px;
         }
       }
     }
