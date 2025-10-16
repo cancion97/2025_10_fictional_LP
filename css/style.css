@@ -411,7 +411,6 @@ header .header_wrap .header_right .cart img {
 header .header_wrap .header_right .container {
   width: 35px;
   height: 35px;
-  margin-block-start: 0.8rem;
 }
 @media (width > 750px) {
   header .header_wrap .header_right .container {
@@ -420,9 +419,10 @@ header .header_wrap .header_right .container {
 }
 header .header_wrap .header_right .hbgButton {
   position: fixed;
+  top: 1.5rem;
   display: block;
   width: 35px;
-  height: 35px;
+  height: 30px;
   cursor: pointer;
 }
 header .header_wrap .header_right .hbgButton__fig {
@@ -436,31 +436,33 @@ header .header_wrap .header_right .hbgButton__fig--01 {
   transition: top 0.3s 0.2s, transform 0.2s 0s;
 }
 header .header_wrap .header_right .hbgButton__fig--02 {
-  top: 8px;
+  top: 9px;
   opacity: 1;
   transition: opacity 0.3s 0.3s;
 }
 header .header_wrap .header_right .hbgButton__fig--03 {
-  top: 16px;
+  top: 18px;
   transition: top 0.3s 0.2s, transform 0.2s 0s;
 }
 header .header_wrap .header_right .hbgButton__fig svg path {
   fill: none;
   stroke: #0a1d37;
-  stroke-width: 7px;
+  stroke-width: 6px;
   transition: d 0.2s ease-in-out;
 }
 header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--01 {
-  top: 10px;
+  top: 9px;
+  right: 2px;
   transform: rotate(30deg);
   transition: top 0.2s 0s, transform 0.3s 0.2s;
 }
 header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--02 {
   opacity: 0;
-  transition: opacity 0.3s 0.3s;
+  transition: opacity 0.1s 0.1s;
 }
 header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--03 {
-  top: 10px;
+  top: 9px;
+  right: -2px;
   transform: rotate(-30deg);
   transition: top 0.2s 0s, transform 0.3s 0.2s;
 }
@@ -484,6 +486,9 @@ header .title_wrap .main_title {
   font-family: "Palanquin Dark", sans-serif;
   font-size: 40px;
 }
+header .title_wrap #t_main {
+  font-size: 48px !important;
+}
 header .title_wrap .sub_title {
   position: absolute;
   right: 50%;
@@ -493,6 +498,9 @@ header .title_wrap .sub_title {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 24px; /* 文字のサイズ */
+}
+header .title_wrap #t_sub {
+  font-size: 32px !important;
 }
 header .dilate {
   filter: url(#dilate);

@@ -71,15 +71,18 @@ const hbgPath = document.querySelectorAll(".js-hbgPath");
 const carts = document.querySelectorAll(".cart");
 
 // パスの形状を定義
+// パスの形状を定義
 const pathOpen = "M 0,20 C 20,20 20,20 40,20 S 60,20 80,20 S 100,20 120,20"; // 直線
 const pathClose = "M 0,20 C 20,0 20,40 40,20 S 60,40 80,20 S 100,40 120,20"; // 波線 (元の形状)
 
 // ハンバーガーメニュークリック
+// ... (前略) ...
+// ハンバーガーメニュークリック
 hbgButton.addEventListener("click", () => {
   if (hbgButton.classList.contains("is-open")) {
     // 🔹 閉じるとき
-    // d属性を閉じた状態（波線）に瞬時にセット
-    hbgPath.forEach((e) => e.setAttribute("d", pathClose));
+    // d属性を波線に瞬時にセット（⚠️ setTimeoutを削除）
+    hbgPath.forEach((e) => e.setAttribute("d", pathClose)); // ⭐️ ここをsetTimeoutなしで実行
 
     hbgButton.classList.remove("is-open");
     menu.classList.remove("active");
@@ -91,7 +94,7 @@ hbgButton.addEventListener("click", () => {
     });
   } else {
     // 🔹 開くとき
-    // d属性を開いた状態（直線）に瞬時にセット
+    // d属性を直線に瞬時にセット
     hbgPath.forEach((e) => e.setAttribute("d", pathOpen));
 
     hbgButton.classList.add("is-open");
@@ -104,7 +107,6 @@ hbgButton.addEventListener("click", () => {
     });
   }
 });
-
 //swiper
 
 window.addEventListener("load", () => {
