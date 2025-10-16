@@ -68,7 +68,7 @@ hbgButton.addEventListener("click", () => {
 //swiper
 
 window.addEventListener("load", () => {
-  new Swiper(".swiper", {
+  new Swiper(".slideshow", {
     loop: true, // 無限ループ
     slidesPerView: "auto",
     allowTouchMove: false,
@@ -83,7 +83,7 @@ window.addEventListener("load", () => {
   });
 
   // スライドを途切れず動かすには timing-function を linear に
-  const wrapper = document.querySelector(".swiper .swiper-wrapper");
+  const wrapper = document.querySelector(".slideshow");
   wrapper.style.transitionTimingFunction = "linear";
 });
 

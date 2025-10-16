@@ -878,7 +878,7 @@ section .worldwide_line img {
   width: 100%;
 }
 .review .swiper-slide img {
-  width: 366px;
+  width: 334px;
 }
 
 .drag {
@@ -1171,7 +1171,8 @@ html {
     padding-block: 2rem;
   }
   #about_us_body .swiper .swiper-wrapper .swiper-slide {
-    width: 200px;
+    min-width: 200px;
+    max-width: 300px;
   }
   #about_us_body .swiper .swiper-wrapper .swiper-slide img {
     width: 100%;

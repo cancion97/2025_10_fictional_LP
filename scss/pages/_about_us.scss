@@ -70,7 +70,8 @@
         padding-block: 2rem;
 
         .swiper-slide {
-          width: 200px;
+          min-width: 200px;
+          max-width: 300px;
 
           img {
             width: 100%;
