@@ -147,21 +147,28 @@
         <div class="cart_main">
           <img src="images/cart_main.png" alt="ビール" />
         </div>
+        <!-- 文字部分 -->
         <div class="cart_textbox">
           <p class="cart_title english">HYOGO KOBE BEER</p>
+
+          <!-- 値段 -->
           <div class="price_wrap">
             <p class="price english">¥790</p>
+
+            <!-- カウンター -->
             <div class="counter">
-              <button class="c_btn minus">-</button>
-              <p class="english">0</p>
-              <button class="c_btn plus">+</button>
+              <button class="c_btn minus"><span>-</span></button>
+              <p class="english number">0</p>
+              <button class="c_btn plus"><span>+</span></button>
             </div>
           </div>
-          <div class="cart_btn">
-            <a href="#"
-              >カートに入れる<img src="images/cart_white.png" alt="カート"
-            /></a>
-          </div>
+          <button class="cart_btn">
+            カートに入れる<img
+              id="cart_img"
+              src="images/cart_white.png"
+              alt="カート"
+            />
+          </button>
         </div>
       </div>
 

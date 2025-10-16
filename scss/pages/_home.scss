@@ -252,9 +252,13 @@ section {
 
 //レビュー
 .review_title {
+  width: 50%;
   display: block;
   text-align: center;
+  margin-inline: auto;
   margin-block-end: 3rem;
+  font-size: 2rem;
+  border-bottom: 5px $accent_color01 dotted;
 }
 
 //横スクロール

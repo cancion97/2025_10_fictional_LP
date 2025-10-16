@@ -83,8 +83,10 @@ window.addEventListener("load", () => {
   });
 
   // スライドを途切れず動かすには timing-function を linear に
-  const wrapper = document.querySelector(".slideshow");
-  wrapper.style.transitionTimingFunction = "linear";
+  const wrapper = document.querySelector(".slideshow .swiper-wrapper");
+  if (wrapper) {
+    wrapper.style.transitionTimingFunction = "linear";
+  }
 });
 
 //レビュー
@@ -103,4 +105,41 @@ window.addEventListener("load", () => {
     centeredSlides: true, // 中央寄せ（好みで）
     loopAdditionalSlides: 2, // 無限ループ時の補助スライド
   });
+});
+
+// カウンター
+const number = document.querySelector(".number");
+const plusBtn = document.querySelector(".plus");
+const minusBtn = document.querySelector(".minus");
+
+let count = 0;
+
+// 数字を更新＆マイナスボタン制御する関数
+function updateDisplay() {
+  number.textContent = count;
+  minusBtn.disabled = count <= 0; // 0以下なら押せない
+}
+
+plusBtn.addEventListener("click", () => {
+  count++;
+  updateDisplay();
+});
+
+minusBtn.addEventListener("click", () => {
+  if (count > 0) {
+    count--;
+    updateDisplay();
+  }
+});
+
+// 初期状態を反映
+updateDisplay();
+
+// カートに入れるボタン書き換え
+const cartBtn = document.querySelector(".cart_btn");
+const cartImg = document.querySelector("#cart_img");
+
+cartBtn.addEventListener("click", () => {
+  cartBtn.firstChild.textContent = "カートに追加しました！";
+  cartImg.src = "images/cart_add.png";
 });
