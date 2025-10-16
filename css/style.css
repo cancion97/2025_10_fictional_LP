@@ -433,7 +433,7 @@ header .header_wrap .header_right .hbgButton__fig {
 }
 header .header_wrap .header_right .hbgButton__fig--01 {
   top: 0;
-  transition: top 0.3s 0.3s, transform 0.3s 0s;
+  transition: top 0.3s 0.2s, transform 0.2s 0s;
 }
 header .header_wrap .header_right .hbgButton__fig--02 {
   top: 8px;
@@ -442,22 +442,18 @@ header .header_wrap .header_right .hbgButton__fig--02 {
 }
 header .header_wrap .header_right .hbgButton__fig--03 {
   top: 16px;
-  transition: top 0.3s 0.3s, transform 0.3s 0s;
-}
-header .header_wrap .header_right .hbgButton__fig svg {
-  width: 100%;
-  height: 100%;
-  transform-origin: center center;
+  transition: top 0.3s 0.2s, transform 0.2s 0s;
 }
 header .header_wrap .header_right .hbgButton__fig svg path {
   fill: none;
   stroke: #0a1d37;
   stroke-width: 7px;
+  transition: d 0.2s ease-in-out;
 }
 header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--01 {
   top: 10px;
   transform: rotate(30deg);
-  transition: top 0.3s 0.2s, transform 0.3s 0.5s;
+  transition: top 0.2s 0s, transform 0.3s 0.2s;
 }
 header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--02 {
   opacity: 0;
@@ -466,7 +462,7 @@ header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--02 {
 header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--03 {
   top: 10px;
   transform: rotate(-30deg);
-  transition: top 0.3s 0.2s, transform 0.3s 0.5s;
+  transition: top 0.2s 0s, transform 0.3s 0.2s;
 }
 header .title_wrap {
   position: relative;
