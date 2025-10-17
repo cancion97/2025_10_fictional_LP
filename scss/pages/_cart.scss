@@ -35,11 +35,11 @@ html {
   }
 
   .cart_main {
+    margin-inline: auto;
+
     @media (width > 430px) {
       margin-block-start: 5rem;
     }
-
-    margin-inline: auto;
 
     img {
       border-radius: 1rem;
