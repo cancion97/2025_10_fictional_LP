@@ -31,7 +31,8 @@ body {
     max-width: 430px;
     width: 100vw;
     background-color: $bg_color;
-
+    z-index: 100;
+    position: relative;
     @media (width > 430px) {
       margin-inline: auto;
       margin-block: 5rem;

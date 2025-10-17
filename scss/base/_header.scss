@@ -2,6 +2,83 @@
 
 //ヘッダー
 
+//PC版メニュー
+.pc_menu {
+  display: none;
+
+  @media (width > 750px) {
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    .icon_image {
+      display: block;
+      width: 60px;
+      height: 60px;
+      background-image: url(../images/icon.png);
+      background-size: contain;
+      img {
+        margin-block-end: 0.5rem;
+      }
+      &:hover {
+        background-image: url(../images/icon_cheers.png);
+      }
+    }
+
+    ul {
+      display: flex;
+
+      li + li {
+        border-left: 1px solid $text_color;
+      }
+
+      li {
+        list-style: none;
+        font-size: 1.5rem;
+        padding-inline: 1.5rem;
+        line-height: 24px;
+
+        a {
+          text-decoration: none;
+          /* 文字色は透明にして背景が見えるようにする */
+          color: transparent;
+          /* オレンジと黒が50%の位置で切り替わるグラデーション */
+          background: linear-gradient(
+              to right,
+              $accent_color02 50%,
+              $text_color 50%
+            )
+            100%;
+          /* 背景をテキストで切り抜く */
+          background-clip: text;
+          background-size: 200% 100%;
+
+          transition: background-position 0.3s;
+          &:hover {
+            background-position: 0 100%;
+          }
+        }
+      }
+    }
+    .cart {
+      width: 25px;
+      transition: opacity 0.6s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+      img {
+        height: auto;
+        margin-block-start: 0.3rem;
+      }
+    }
+  }
+}
+
 header {
   .header_container {
     height: 1000px;
@@ -18,82 +95,6 @@ header {
     }
   }
 
-  //PC版メニュー
-  .pc_menu {
-    display: none;
-
-    @media (width > 750px) {
-      position: absolute;
-      top: 0.5rem;
-      right: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 1rem;
-
-      .icon_image {
-        display: block;
-        width: 60px;
-        height: 60px;
-        background-image: url(../images/icon.png);
-        background-size: contain;
-        img {
-          margin-block-end: 0.5rem;
-        }
-        &:hover {
-          background-image: url(../images/icon_cheers.png);
-        }
-      }
-
-      ul {
-        display: flex;
-
-        li + li {
-          border-left: 1px solid $text_color;
-        }
-
-        li {
-          list-style: none;
-          font-size: 1.5rem;
-          padding-inline: 1.5rem;
-          line-height: 24px;
-
-          a {
-            text-decoration: none;
-            /* 文字色は透明にして背景が見えるようにする */
-            color: transparent;
-            /* オレンジと黒が50%の位置で切り替わるグラデーション */
-            background: linear-gradient(
-                to right,
-                $accent_color02 50%,
-                $text_color 50%
-              )
-              100%;
-            /* 背景をテキストで切り抜く */
-            background-clip: text;
-            background-size: 200% 100%;
-
-            transition: background-position 0.3s;
-            &:hover {
-              background-position: 0 100%;
-            }
-          }
-        }
-      }
-      .cart {
-        width: 25px;
-        transition: opacity 0.6s ease;
-
-        &:hover {
-          transform: translateY(-2px);
-        }
-        img {
-          height: auto;
-          margin-block-start: 0.3rem;
-        }
-      }
-    }
-  }
   //アイコン+カート+ハンバーガー
   .header_wrap {
     padding-block-end: 8rem;

@@ -2,82 +2,113 @@
 
 //うねうね
 .pc_une_wrap {
-  z-index: -15000;
-
-  .pc_une01 {
-    position: fixed;
-    width: 70%;
-    left: -150px;
-    bottom: 100px;
-    max-width: 550px;
-  }
-
-  .pc_une02 {
-    position: fixed;
-    width: 70%;
-    right: 150px;
-    max-width: 450px;
-  }
-
-  .pc_une03 {
-    position: fixed;
-    width: 70%;
-    bottom: 20px;
-    right: 0px;
-    max-width: 317px;
-  }
-
-  .target {
+  display: none;
+  @media (width>750px) {
     display: block;
-    width: 100%;
-    height: auto;
+    z-index: -1000;
+    pointer-events: none;
+
+    .pc_une01 {
+      position: fixed;
+      width: 70%;
+      left: -150px;
+      bottom: 100px;
+      max-width: 600px;
+    }
+
+    .pc_une02 {
+      position: fixed;
+      width: 70%;
+      right: 180px;
+      max-width: 500px;
+    }
+
+    .pc_une03 {
+      position: fixed;
+      width: 70%;
+      bottom: 20px;
+      right: 0px;
+      max-width: 317px;
+    }
+
+    .target {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
 /* Animation */
 .pc_une01 {
-  animation: floating-x 9.2s ease-in-out infinite alternate-reverse;
+  animation: floating-x01 9.2s ease-in-out infinite alternate-reverse;
 }
-.target {
-  animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+.target01 {
+  animation: floating-y01 1.8s ease-in-out infinite alternate-reverse;
 }
-@keyframes floating-x {
+@keyframes floating-x01 {
   0% {
     transform: translateX(-2%);
   }
   100% {
-    transform: translateX(4%);
+    transform: translateX(1%);
   }
 }
-@keyframes floating-y {
+@keyframes floating-y01 {
   0% {
-    transform: translateY(-5%);
+    transform: translateY(-1%);
   }
   100% {
-    transform: translateY(5%);
+    transform: translateY(2%);
   }
 }
 
 .pc_une02 {
-  animation: floating-x 9.2s ease-in-out infinite alternate-reverse;
+  animation: floating-x02 9.2s ease-in-out infinite alternate-reverse;
 }
-.target {
-  animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+.target02 {
+  animation: floating-y02 1.8s ease-in-out infinite alternate-reverse;
 }
-@keyframes floating-x {
+@keyframes floating-x02 {
   0% {
-    transform: translateX(2%);
+    transform: translateX(1%);
   }
   100% {
-    transform: translateX(-4%);
+    transform: translateX(-2%);
   }
 }
-@keyframes floating-y {
+@keyframes floating-y02 {
   0% {
-    transform: translateY(5%);
+    transform: translateY(1%);
   }
   100% {
-    transform: translateY(-5%);
+    transform: translateY(-3%);
+  }
+}
+
+.pc_une03 {
+  animation: floating-x03 9.2s ease-in-out infinite alternate-reverse;
+}
+.target03 {
+  animation: floating-y03 1.8s ease-in-out infinite alternate-reverse;
+}
+@keyframes floating-x03 {
+  0% {
+    transform: translateX(5%);
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: translateX(-2%);
+    transform: rotate(-15deg);
+  }
+}
+@keyframes floating-y03 {
+  0% {
+    transform: translateY(-3%);
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: translateY(1%);
   }
 }
 

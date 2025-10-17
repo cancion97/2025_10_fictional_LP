@@ -278,6 +278,72 @@ progress {
   cursor: default;
 }
 
+.pc_menu {
+  display: none;
+}
+@media (width > 750px) {
+  .pc_menu {
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  .pc_menu .icon_image {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../images/icon.png);
+    background-size: contain;
+  }
+  .pc_menu .icon_image img {
+    margin-block-end: 0.5rem;
+  }
+  .pc_menu .icon_image:hover {
+    background-image: url(../images/icon_cheers.png);
+  }
+  .pc_menu ul {
+    display: flex;
+  }
+  .pc_menu ul li + li {
+    border-left: 1px solid #0a1d37;
+  }
+  .pc_menu ul li {
+    list-style: none;
+    font-size: 1.5rem;
+    padding-inline: 1.5rem;
+    line-height: 24px;
+  }
+  .pc_menu ul li a {
+    text-decoration: none;
+    /* 文字色は透明にして背景が見えるようにする */
+    color: transparent;
+    /* オレンジと黒が50%の位置で切り替わるグラデーション */
+    background: linear-gradient(to right, #4fc3f7 50%, #0a1d37 50%) 100%;
+    /* 背景をテキストで切り抜く */
+    -webkit-background-clip: text;
+            background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position 0.3s;
+  }
+  .pc_menu ul li a:hover {
+    background-position: 0 100%;
+  }
+  .pc_menu .cart {
+    width: 25px;
+    transition: opacity 0.6s ease;
+  }
+  .pc_menu .cart:hover {
+    transform: translateY(-2px);
+  }
+  .pc_menu .cart img {
+    height: auto;
+    margin-block-start: 0.3rem;
+  }
+}
+
 header .header_container {
   height: 1000px;
   background-image: url(../images/main_image.png);
@@ -294,71 +360,6 @@ header .header_container {
   header .header_container {
     border-radius: 2rem 2rem 0 0;
     padding-block-start: 12rem;
-  }
-}
-header .pc_menu {
-  display: none;
-}
-@media (width > 750px) {
-  header .pc_menu {
-    position: absolute;
-    top: 0.5rem;
-    right: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1rem;
-  }
-  header .pc_menu .icon_image {
-    display: block;
-    width: 60px;
-    height: 60px;
-    background-image: url(../images/icon.png);
-    background-size: contain;
-  }
-  header .pc_menu .icon_image img {
-    margin-block-end: 0.5rem;
-  }
-  header .pc_menu .icon_image:hover {
-    background-image: url(../images/icon_cheers.png);
-  }
-  header .pc_menu ul {
-    display: flex;
-  }
-  header .pc_menu ul li + li {
-    border-left: 1px solid #0a1d37;
-  }
-  header .pc_menu ul li {
-    list-style: none;
-    font-size: 1.5rem;
-    padding-inline: 1.5rem;
-    line-height: 24px;
-  }
-  header .pc_menu ul li a {
-    text-decoration: none;
-    /* 文字色は透明にして背景が見えるようにする */
-    color: transparent;
-    /* オレンジと黒が50%の位置で切り替わるグラデーション */
-    background: linear-gradient(to right, #4fc3f7 50%, #0a1d37 50%) 100%;
-    /* 背景をテキストで切り抜く */
-    -webkit-background-clip: text;
-            background-clip: text;
-    background-size: 200% 100%;
-    transition: background-position 0.3s;
-  }
-  header .pc_menu ul li a:hover {
-    background-position: 0 100%;
-  }
-  header .pc_menu .cart {
-    width: 25px;
-    transition: opacity 0.6s ease;
-  }
-  header .pc_menu .cart:hover {
-    transform: translateY(-2px);
-  }
-  header .pc_menu .cart img {
-    height: auto;
-    margin-block-start: 0.3rem;
   }
 }
 header .header_wrap {
@@ -663,81 +664,115 @@ footer small,
 }
 
 .pc_une_wrap {
-  z-index: -15000;
+  display: none;
 }
-.pc_une_wrap .pc_une01 {
-  position: fixed;
-  width: 70%;
-  left: -150px;
-  bottom: 100px;
-  max-width: 550px;
-}
-.pc_une_wrap .pc_une02 {
-  position: fixed;
-  width: 70%;
-  right: 150px;
-  max-width: 450px;
-}
-.pc_une_wrap .pc_une03 {
-  position: fixed;
-  width: 70%;
-  bottom: 20px;
-  right: 0px;
-  max-width: 317px;
-}
-.pc_une_wrap .target {
-  display: block;
-  width: 100%;
-  height: auto;
+@media (width > 750px) {
+  .pc_une_wrap {
+    display: block;
+    z-index: -1000;
+    pointer-events: none;
+  }
+  .pc_une_wrap .pc_une01 {
+    position: fixed;
+    width: 70%;
+    left: -150px;
+    bottom: 100px;
+    max-width: 600px;
+  }
+  .pc_une_wrap .pc_une02 {
+    position: fixed;
+    width: 70%;
+    right: 180px;
+    max-width: 500px;
+  }
+  .pc_une_wrap .pc_une03 {
+    position: fixed;
+    width: 70%;
+    bottom: 20px;
+    right: 0px;
+    max-width: 317px;
+  }
+  .pc_une_wrap .target {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Animation */
 .pc_une01 {
-  animation: floating-x 9.2s ease-in-out infinite alternate-reverse;
+  animation: floating-x01 9.2s ease-in-out infinite alternate-reverse;
 }
 
-.target {
-  animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+.target01 {
+  animation: floating-y01 1.8s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes floating-x {
+@keyframes floating-x01 {
   0% {
     transform: translateX(-2%);
   }
   100% {
-    transform: translateX(4%);
+    transform: translateX(1%);
   }
 }
-@keyframes floating-y {
+@keyframes floating-y01 {
   0% {
-    transform: translateY(-5%);
+    transform: translateY(-1%);
   }
   100% {
-    transform: translateY(5%);
+    transform: translateY(2%);
   }
 }
 .pc_une02 {
-  animation: floating-x 9.2s ease-in-out infinite alternate-reverse;
+  animation: floating-x02 9.2s ease-in-out infinite alternate-reverse;
 }
 
-.target {
-  animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+.target02 {
+  animation: floating-y02 1.8s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes floating-x {
+@keyframes floating-x02 {
   0% {
-    transform: translateX(2%);
+    transform: translateX(1%);
   }
   100% {
-    transform: translateX(-4%);
+    transform: translateX(-2%);
   }
 }
-@keyframes floating-y {
+@keyframes floating-y02 {
   0% {
-    transform: translateY(5%);
+    transform: translateY(1%);
   }
   100% {
-    transform: translateY(-5%);
+    transform: translateY(-3%);
+  }
+}
+.pc_une03 {
+  animation: floating-x03 9.2s ease-in-out infinite alternate-reverse;
+}
+
+.target03 {
+  animation: floating-y03 1.8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floating-x03 {
+  0% {
+    transform: translateX(5%);
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: translateX(-2%);
+    transform: rotate(-15deg);
+  }
+}
+@keyframes floating-y03 {
+  0% {
+    transform: translateY(-3%);
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: translateY(1%);
   }
 }
 .menu {
@@ -1599,6 +1634,8 @@ body .main_wrap {
   max-width: 430px;
   width: 100vw;
   background-color: #faf8f4;
+  z-index: 100;
+  position: relative;
 }
 @media (width > 430px) {
   body .main_wrap {
