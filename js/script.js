@@ -4,66 +4,12 @@
 // https://fuuno.net/ani/ani29/ani29.html
 // https://developer.mozilla.org/ja/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API
 
-//ハンバーガーメニュー
-// const menu = document.querySelector(".menu");
-// const hbgButton = document.querySelector(".js-hbgButton");
-// const hbgPath = document.querySelectorAll(".js-hbgPath");
-// const carts = document.querySelectorAll(".cart"); // ← すべてのカートを取得
+//ローディング画面
+const loading = document.querySelector("#loading_container");
+setTimeout(() => {
+  loading.classList.add("active");
+}, "4000");
 
-// // アニメーション設定
-// let timingOpen = {
-//   iterations: 1,
-//   duration: 200,
-//   fill: "forwards",
-// };
-
-// let timingClose = {
-//   iterations: 1,
-//   duration: 200,
-//   delay: 600,
-//   fill: "forwards",
-// };
-
-// // パスの形状
-// let keyframeOpen = [
-//   {
-//     d: "path('M 0,20 C 20,20 20,20 40,20 S 60,20 80,20 S 100,20 120,20')",
-//   },
-// ];
-
-// let keyframeClose = [
-//   {
-//     d: "path('M 0,20 C 20,0 20,40 40,20 S 60,40 80,20 S 100,40 120,20')",
-//   },
-// ];
-
-// // ハンバーガーメニュークリック
-// hbgButton.addEventListener("click", () => {
-//   if (hbgButton.classList.contains("is-open")) {
-//     // 🔹 閉じるとき
-//     hbgPath.forEach((e) => e.animate(keyframeClose, timingClose));
-//     hbgButton.classList.remove("is-open");
-//     menu.classList.remove("active");
-
-//     // カートを表示
-//     carts.forEach((c) => {
-//       c.style.opacity = "1";
-//       c.style.pointerEvents = "auto";
-//     });
-//   } else {
-//     // 🔹 開くとき
-//     hbgPath.forEach((e) => e.animate(keyframeOpen, timingOpen));
-//     hbgButton.classList.add("is-open");
-//     menu.classList.add("active");
-
-//     // カートを非表示
-//     carts.forEach((c) => {
-//       c.style.opacity = "0";
-//       c.style.pointerEvents = "none";
-//     });
-//   }
-// });
-// ハンバーガーメニュー
 // ハンバーガーメニュー
 const menu = document.querySelector(".menu");
 const hbgButton = document.querySelector(".js-hbgButton");
@@ -187,29 +133,21 @@ cartBtn.addEventListener("click", () => {
 });
 
 //loading
-document.addEventListener("DOMContentLoaded", () => {
-  // ページ内のすべてのリソース（画像など）が読み込まれるのを待つ
-  window.addEventListener("load", () => {
-    const loaderWrapper = document.getElementById("loader-wrapper");
-    const mainContent = document.getElementById("main-content");
 
-    // アニメーションの完了を待つ時間（例: CSSアニメーションの合計時間 + 余韻）
-    // pour-beer が3秒、rise-foam が3秒（0.5秒遅延）なので、4秒程度
-    const minLoadTime = 4000; // 4秒
+//         // 3. ローディングテキストの更新
+//         loadingText.textContent = `Loading... ${textPercentage}%`;
+//       } else {
+//         // 100%に達したらアニメーションを終了
+//         clearInterval(intervalId);
+//         loadingText.textContent = "Complete! Enjoy Your Beer!";
 
-    // 最小ロード時間が経過した後にローディングを終了
-    setTimeout(() => {
-      // ローディング画面を隠す
-      loaderWrapper.classList.add("is-hidden");
+//         // オプション: 最後の泡の動きを追加（完了アニメーション）
+//         const foam = beerLiquid.nextElementSibling;
+//         foam.style.transition = "transform 0.5s, opacity 0.5s";
+//         foam.style.opacity = "1";
+//       }
+//     }, intervalTime);
+//   };
 
-      // メインコンテンツを表示
-      mainContent.style.display = "block";
-
-      // ローディング画面が完全に非表示になった後にDOMから削除（オプション）
-      // transitionの時間が0.5秒なので、それより後に実行
-      setTimeout(() => {
-        loaderWrapper.remove();
-      }, 500);
-    }, minLoadTime);
-  });
-});
+//   fillBeer(); // アニメーションを開始
+// });

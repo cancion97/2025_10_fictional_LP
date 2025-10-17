@@ -1,239 +1,276 @@
-// SCSS 変数
-$beer-color: #fca02d; // ビールの色（オレンジがかった黄色）
-$foam-color: #ffffff; // 泡の色（白）
-$glass-border-color: #2c3e50; // グラスの縁の色（濃いグレー）
-$bubble-color: rgba(255, 255, 255, 0.4); // 気泡の色（半透明の白）
-$background-color: #333333;
+@use "../base/variables" as *;
 
-// 🚨 Figmaから取得した新しいグラス全体の輪郭のパスデータ
-// viewBox="0 0 139 256" の座標系
-$glass-path: "M127.11 3.35059L126.65 7.25977C125.931 13.3775 125.534 18.9775 125.421 24.6553C125.43 28.8943 125.603 33.2846 125.982 38.6777L126.158 41.0547L126.162 41.1191L126.166 41.1855C126.64 49.5581 127.723 55.8272 131.82 71.3594L132.711 74.6904C134.674 82.1594 135.924 87.8864 136.815 94.3701C137.27 96.5859 137.644 98.5983 137.965 100.553L138.273 102.523L138.275 102.53L138.276 102.538L138.486 103.996L138.487 104.006L138.513 104.187L138.535 104.347L138.54 104.508L138.546 104.687C138.67 108.387 138.694 111.549 138.622 114.415C138.847 121.662 138.144 127.328 136.243 133.651L136.213 133.8L136.18 133.958L136.131 134.111L136.072 134.291C134.376 139.591 132.619 143.945 130.073 148.215C127.789 152.045 124.989 155.604 121.333 159.625C121.057 159.963 120.795 160.282 120.525 160.615L120.521 160.622L120.372 160.805L120.249 160.955L120.108 161.089L119.938 161.251L119.933 161.256C113.221 167.59 109.436 170.405 103.317 173.69C100.013 175.583 97.2922 176.996 94.5225 178.174L91.1748 183.802C88.2042 188.795 86.8907 191.191 85.417 195.81L85.4053 195.844C83.7631 201.16 83.3682 204.159 83.542 210.489C83.8099 214.728 84.1948 216.979 85.2705 220.82C86.3377 222.719 87.2195 223.93 88.1855 224.944C89.2129 226.023 90.5317 227.089 92.6934 228.553C97.7217 230.747 100.788 231.712 106.538 233.124C108.391 233.429 110.002 233.612 111.902 233.877C113.715 234.129 115.8 234.461 117.769 235.087C119.658 235.688 121.159 236.403 122.44 237.238C123.649 238.027 124.561 238.876 124.922 239.192H124.923C126.594 240.655 128.856 243.419 128.596 247.439C128.621 247.949 128.625 248.607 128.507 249.323V249.324C128.396 249.999 128.201 250.586 128.042 250.996C127.911 251.334 127.756 251.666 127.733 251.712L127.731 251.715L127.652 251.89L127.305 253.283L126.736 255.556H11.6934L11.125 253.284L10.7764 251.888L10.6963 251.712C10.7201 251.765 10.5382 251.385 10.3877 250.996C10.2291 250.586 10.033 249.999 9.92188 249.324V249.323C9.80447 248.609 9.80643 247.952 9.83203 247.439C9.57133 243.418 11.836 240.654 13.5068 239.192C13.8678 238.877 14.7795 238.027 15.9883 237.238C17.2694 236.403 18.77 235.688 20.6602 235.087C22.6291 234.46 24.714 234.129 26.5264 233.877C28.427 233.612 30.0373 233.429 31.8896 233.124C37.6398 231.711 40.706 230.747 45.7344 228.553C47.8967 227.088 49.2156 226.023 50.2432 224.944C51.2092 223.93 52.0901 222.719 53.1572 220.82C54.2312 216.985 54.6178 214.735 54.8857 210.51C55.0613 204.151 54.6646 201.153 53.0117 195.81C51.538 191.191 50.2244 188.795 47.2539 183.802L43.8252 178.039C41.1633 176.888 38.5236 175.511 35.3447 173.69C29.2274 170.406 25.4415 167.59 18.7305 161.256L18.7256 161.251L18.5547 161.089L18.4141 160.955L18.291 160.805L18.1426 160.622L18.1377 160.615C17.8673 160.281 17.6093 159.969 17.3291 159.626C13.673 155.605 10.8736 152.045 8.58984 148.215C6.0441 143.946 4.28645 139.592 2.58984 134.292L2.59082 134.291L2.53223 134.111L2.4834 133.958L2.4502 133.8L2.42285 133.662C0.520108 127.334 -0.184882 121.666 0.0400391 114.415C-0.03227 111.548 -0.00692118 108.386 0.117188 104.687L0.123047 104.508L0.12793 104.347L0.150391 104.187L0.175781 104.006L0.176758 103.996L0.386719 102.538L0.387695 102.53L0.389648 102.523C0.775398 99.938 1.2379 97.3366 1.84668 94.3701C2.86586 86.9555 4.35519 80.531 6.84277 71.3594C10.9405 55.8269 12.0229 49.5581 12.4971 41.1855L12.501 41.1191L12.5049 41.0547C13.006 34.5432 13.2311 29.5006 13.2412 24.6553C13.1282 18.9772 12.7325 13.3771 12.0127 7.25977L11.5527 3.35059L11.1582 0H127.505L127.11 3.35059ZM52.6064 181.064C55.1066 185.275 56.6072 187.969 58.0205 191.897H58.082L58.7363 194.01C60.6155 200.079 61.0777 203.742 60.8818 210.73L60.8809 210.783L60.8779 210.835C60.5753 215.644 60.1045 218.325 58.8379 222.792L58.7441 223.122L58.5791 223.422C57.2716 225.793 56.0599 227.535 54.5879 229.081C53.0905 230.654 51.3104 232.038 48.8643 233.682L48.6416 233.831L48.3965 233.938C42.803 236.393 39.3844 237.466 33.209 238.98L33.0996 239.007L32.9873 239.025C30.9889 239.358 29.1056 239.576 27.3535 239.82C25.5746 240.068 23.9256 240.344 22.4795 240.804C21.0394 241.262 20.0412 241.759 19.2666 242.264C18.4946 242.767 17.9457 243.28 17.457 243.708C16.4388 244.599 15.6999 245.725 15.8252 247.146L15.8457 247.38L15.8291 247.614C15.8071 247.936 15.8132 248.169 15.8428 248.35L15.8955 248.575C15.9194 248.657 15.9491 248.744 15.9834 248.833C16.0216 248.932 16.0483 248.991 16.0752 249.05L16.1729 249.261L16.1738 249.264L16.3047 249.556H122.124L122.258 249.258C122.342 249.07 122.369 249.03 122.445 248.833C122.514 248.655 122.564 248.484 122.586 248.35C122.615 248.172 122.621 247.941 122.599 247.614L122.582 247.38L122.603 247.146C122.728 245.724 121.989 244.598 120.972 243.708C120.483 243.281 119.934 242.767 119.162 242.264C118.388 241.759 117.389 241.262 115.949 240.804C114.503 240.344 112.854 240.068 111.075 239.82C109.323 239.576 107.44 239.358 105.441 239.025L105.33 239.007L105.22 238.98C99.0444 237.466 95.6254 236.392 90.0322 233.938L89.7871 233.831L89.5645 233.682C87.1185 232.038 85.3381 230.653 83.8408 229.081C82.3689 227.535 81.157 225.793 79.8496 223.422L79.6846 223.122L79.5908 222.792C78.3242 218.325 77.8544 215.644 77.5518 210.835L77.5479 210.783L77.5469 210.73C77.351 203.742 77.8131 200.079 79.6924 194.01L80.3467 191.897H80.4092C81.8137 187.994 83.3022 185.308 85.7744 181.143C85.2681 181.281 84.7476 181.42 84.2109 181.559L84.0273 181.607L83.8682 181.648L83.7051 181.672L83.5166 181.699C77.9701 182.503 73.6557 182.883 69.3311 182.816C65.5493 182.875 61.7755 182.591 57.1787 181.981L55.1465 181.699L54.958 181.672L54.7949 181.648L54.6357 181.607L54.4512 181.56V181.559C53.8144 181.394 53.201 181.228 52.6064 181.064ZM17.9717 6.55859C18.7146 12.8728 19.1245 18.6841 19.2402 24.5908L19.2412 24.623V24.6553C19.231 29.6937 18.9968 34.8953 18.4873 41.5156V41.5254C17.9799 50.483 16.7845 57.1974 12.6387 72.9102L12.6367 72.9199L12.6338 72.9297C10.1649 82.0325 8.74747 88.191 7.77832 95.2773L7.76465 95.377L7.74414 95.4756C7.14596 98.3825 6.69721 100.901 6.3252 103.393L6.11621 104.852L6.11328 104.865V104.888C5.99098 108.534 5.9683 111.595 6.03906 114.333L6.04102 114.42L6.03809 114.507C5.83437 120.845 6.39049 125.693 7.89258 130.998L8.20605 132.065L8.24707 132.201L8.27344 132.33V132.331C8.27375 132.333 8.27383 132.335 8.27441 132.338L8.28809 132.399L8.29492 132.432L8.30371 132.46L8.30469 132.462C9.92283 137.516 11.5137 141.405 13.7422 145.143C15.6334 148.314 17.9789 151.365 21.168 154.924L21.8174 155.643L21.8711 155.702L21.9219 155.765C22.1916 156.095 22.5012 156.47 22.7979 156.837L22.8262 156.87L22.8496 156.893L24.0225 157.991C29.3415 162.931 32.5542 165.299 37.1904 167.863L38.207 168.417L38.2432 168.437L38.2803 168.458C41.3792 170.235 43.8805 171.539 46.4062 172.618L47.293 172.776L54.6074 174.08C60.2984 175.094 64.6544 175.598 69.0664 175.612C73.5811 175.62 78.0051 175.117 83.8223 174.08L91.1367 172.776L92.4238 172.546C94.8932 171.481 97.352 170.195 100.383 168.458L100.42 168.437L100.456 168.417C106.008 165.438 109.37 162.974 115.813 156.893L115.836 156.87L115.864 156.837C116.162 156.469 116.465 156.101 116.74 155.765L116.791 155.702L116.845 155.643C120.369 151.771 122.904 148.525 124.921 145.143C127.15 141.405 128.74 137.517 130.358 132.462L130.359 132.46L130.368 132.432L130.375 132.399L130.376 132.397C130.378 132.388 130.382 132.365 130.387 132.341L130.415 132.201L130.456 132.065C132.194 126.332 132.841 121.268 132.624 114.507L132.621 114.42L132.623 114.333C132.694 111.595 132.672 108.533 132.55 104.888V104.884L132.549 104.865L132.547 104.852L132.337 103.394V103.393C131.965 100.902 131.516 98.3832 130.918 95.4756L130.897 95.377L130.884 95.2773C129.915 88.1909 128.498 82.032 126.029 72.9297L126.026 72.9199L126.024 72.9102C121.879 57.1976 120.683 50.483 120.176 41.5254V41.5156L119.997 39.0967C119.611 33.5977 119.43 29.0641 119.421 24.6553V24.623L119.422 24.5908C119.538 18.6838 119.949 12.8724 120.691 6.55859L120.757 6H17.9062L17.9717 6.55859Z";
-
-// SVGのviewBoxに合わせた描画サイズ
-$svg-width: 139;
-$svg-height: 256;
-
-// 画面での表示サイズ
-$display-width: 120px;
-$scale-factor: $svg-width / $display-width;
-
-// アニメーションの高さ
-$beer-fill-height-ratio: 0.85; // 85%まで満たす
-$liquid-height: $svg-height * $beer-fill-height-ratio; // 液体の最終的な高さ（256px基準）
-$foam-height-px: 15; // 泡の厚み (px)
-
-// --- 基本スタイル ---
-
-body {
-  background-color: $background-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+#loading_container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2000;
   margin: 0;
-  font-family: sans-serif;
+  background-color: $text_color;
+  transition: 2s ease-out;
 }
 
-#loader-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-// --- グラスとコンテナ ---
-
-.beer-glass-container {
-  // 最終的な表示幅と、縦横比を維持した高さを計算
-  width: $display-width;
-  height: $svg-height / $scale-factor * 1px; // SCSSで単位を付ける
-
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-
-  // SVGの座標系 (139x256) をCSSの描画領域 (120px幅) に合わせる
-  transform: scale(1 / $scale-factor); /* 縮小率を適用 */
-  transform-origin: center bottom;
-}
-
-.beer-glass {
-  // グラス要素自体のサイズはSVGのviewBoxと合わせる (スケールは親で行う)
-  width: $svg-width * 1px;
-  height: $svg-height * 1px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  overflow: hidden;
-  background-color: transparent;
-
-  /* パスデータで切り抜き */
-  -webkit-clip-path: path($glass-path);
-  clip-path: path($glass-path);
-
-  box-shadow: inset 0 0 0 3px $glass-border-color;
-  z-index: 1;
-}
-
-.glass-stem {
-  // パスデータに含まれているため、非表示
-  display: none;
-}
-
-// --- 液体 (ビール) のアニメーション ---
-
-.beer-liquid {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: $beer-color;
-  height: 0;
-  z-index: 0;
-  animation: fill-beer 3s ease-in-out forwards;
-}
-
-@keyframes fill-beer {
-  0% {
-    height: 0px;
-  }
-  100% {
-    height: $liquid-height * 1px;
-  } // 256pxの85% (217.6px) まで満たす
-}
-
-// --- 泡 (フォーム) のアニメーション ---
-
-.beer-foam {
-  position: absolute;
-  bottom: $liquid-height * 1px; /* 液面の位置から開始 */
-  left: 0;
-  width: 100%;
-  height: $foam-height-px * 1px; // 泡の厚み
-  background: linear-gradient(
-    to top,
-    rgba($foam-color, 0.8) 0%,
-    $foam-color 100%
-  );
-  border-radius: 50% / 20%;
-  transform: translateY(
-    $foam-height-px / 2 * 1px
-  ); // 泡が少し潜っている状態から始める
+#loading_container.active {
   opacity: 0;
-  z-index: 2;
-
-  animation: rise-foam 3s 0.5s ease-out forwards;
+  z-index: -5000;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  display: block;
 }
 
-@keyframes rise-foam {
-  0% {
-    transform: translateY($foam-height-px / 2 * 1px);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
+.loader-wrap {
+  top: 50%;
+  left: 50%;
+  width: 370px;
+  height: 194px;
+  position: fixed;
+  margin-top: -97px;
+  margin-left: -187px;
+}
+.bar {
+  height: 5px;
+  width: 100%;
+  margin: 30px 0;
+  position: relative;
+  background-color: $bg_color;
+}
+.bar:before {
+  top: 0;
+  left: 0;
+  width: 0;
+  content: "";
+  height: inherit;
+  position: absolute;
+  background-color: #fbce13;
+  animation: bar 2500ms linear infinite;
+}
+.text {
+  color: $accent_color01;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  @media (width < 430px) {
+    letter-spacing: 2px;
   }
 }
-
-/* 泡の垂れる表現 */
-.beer-foam::before,
-.beer-foam::after {
+.cap {
+  left: 0;
+  right: 0;
+  top: -15px;
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+}
+.cap > i {
+  opacity: 0;
+  height: 3px;
+  width: 16px;
+  margin-left: 12px;
+  border-radius: 3px;
+  position: absolute;
+  background-color: $accent_color01;
+  animation: move-cap 2500ms linear infinite;
+}
+.bottle-fill {
+  animation: waves 2500ms infinite linear, fill 2500ms infinite forwards;
+}
+.bottle-wrap {
+  height: 110px;
+  position: relative;
+}
+.bottle {
+  bottom: 0;
+  opacity: 0;
+  width: 40px;
+  text-align: center;
+  position: absolute;
+  display: inline-block;
+  vertical-align: bottom;
+  transform-origin: bottom right;
+  transform: translateX(-300px);
+  animation: move 2500ms linear infinite;
+}
+.bottle:before,
+.bottle:after {
+  left: 50%;
+  opacity: 0;
   content: "";
   position: absolute;
-  background-color: $foam-color;
-  border-radius: 0 0 10px 10px;
-  opacity: 0;
-  animation: drip-foam 0.5s 2.8s forwards;
-  z-index: 3;
+  background-color: $accent_color01;
 }
-.beer-foam::before {
-  top: -5px;
-  left: 20%;
-  width: 15px;
-  height: 10px;
-  transform: rotate(10deg);
+.bottle:before {
+  opacity: 1;
+  width: 4px;
+  top: -40px;
+  height: 14px;
+  margin-left: -2px;
+  animation: lock-cap 2500ms linear infinite;
 }
-.beer-foam::after {
-  top: -8px;
-  right: 20%;
-  width: 12px;
-  height: 8px;
-  transform: rotate(-5deg);
+.bottle:after {
+  top: 0;
+  height: 4px;
+  width: 16px;
+  margin-left: -8px;
+  border-radius: 4px;
+  animation: show-cap 2500ms linear infinite;
+}
+.cap > i:nth-child(2),
+.bottle:nth-child(2),
+.bottle:nth-child(2):before,
+.bottle:nth-child(2):after,
+.bottle:nth-child(2) .bottle-fill {
+  animation-delay: 625ms;
+}
+.cap > i:nth-child(3),
+.bottle:nth-child(3),
+.bottle:nth-child(3):before,
+.bottle:nth-child(3):after,
+.bottle:nth-child(3) .bottle-fill {
+  animation-delay: 1250ms;
+}
+.cap > i:nth-child(4),
+.bottle:nth-child(4),
+.bottle:nth-child(4):before,
+.bottle:nth-child(4):after,
+.bottle:nth-child(4) .bottle-fill {
+  animation-delay: 1875ms;
+}
+.bottle svg {
+  display: block;
+  margin: auto;
 }
 
-@keyframes drip-foam {
-  to {
+@keyframes waves {
+  0% {
+    x: -200px;
+  }
+  25% {
+    x: -100px;
+  }
+  50% {
+    x: -200px;
+  }
+  75%,
+  100% {
+    x: -40px;
+  }
+}
+@keyframes fill {
+  0% {
+    height: 0;
+    y: 125px;
+  }
+  30%,
+  100% {
+    height: 100px;
+    y: 25px;
+  }
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(75px);
+  }
+  48% {
+    transform: translateX(144px) translateY(0);
+  }
+  50% {
+    transform: translateX(150px) translateY(-10px);
+  }
+  52% {
+    transform: translateX(156px) translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(225px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+@keyframes move-cap {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  25% {
+    opacity: 1;
+    transform: translate(75px, 0);
+  }
+  45% {
     opacity: 1;
   }
-}
-
-// --- 気泡のアニメーション ---
-
-.bubble {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  width: 3px;
-  height: 3px;
-  background-color: $bubble-color;
-  border-radius: 50%;
-  opacity: 0;
-  z-index: 1;
-  animation: float-up 3s ease-in-out infinite both;
-}
-
-@for $i from 1 through 10 {
-  .bubble:nth-child(#{$i}) {
-    // グラスの横幅に合わせてランダムな位置に配置 (0%から100%)
-    left: percentage(random(100) / 100);
-    // 開始時間と継続時間をランダムに設定
-    animation-delay: (random(3000) / 1000) * 1s;
-    animation-duration: 4s + (random(2000) / 1000) * 1s;
-    // サイズも少しランダムに
-    $size: 1 + random(4);
-    width: $size * 1px;
-    height: $size * 1px;
+  48% {
+    transform: translate(144px, 0);
   }
-}
-
-@keyframes float-up {
-  0% {
-    transform: translateY(0) scale(0.5);
+  50% {
+    transform: translate(150px, 10px);
+  }
+  52% {
     opacity: 0;
   }
-  10% {
-    opacity: 1;
+  75% {
+    transform: translate(225px, 0);
   }
+  100% {
+    opacity: 0;
+    transform: translate(300px, 0);
+  }
+}
+@keyframes show-cap {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  48%,
   90% {
     opacity: 1;
   }
+}
+@keyframes lock-cap {
+  0%,
+  45%,
+  48%,
   100% {
-    // 液体の上端 (85%の位置) より少し上まで浮上させる
-    transform: translateY($liquid-height * -1px) scale(1.5);
     opacity: 0;
+    transform: translateY(-10px);
+  }
+  46%,
+  47% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
-// --- ローディングテキスト ---
-
-.loading-text {
-  color: $foam-color;
-  font-size: 1.2em;
-  margin-top: 10px;
-  opacity: 0;
-  animation: fade-in 1s 3.5s forwards;
-}
-
-@keyframes fade-in {
-  to {
-    opacity: 1;
+@keyframes bar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
