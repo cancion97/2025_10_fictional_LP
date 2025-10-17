@@ -7,12 +7,12 @@
   z-index: 2000;
   margin: 0;
   background-color: $text_color;
-  transition: 2s ease-out;
+  transition: 0.5s ease-out;
 }
 
 #loading_container.active {
   opacity: 0;
-  z-index: -5000;
+  pointer-events: none;
 }
 *,
 :after,
