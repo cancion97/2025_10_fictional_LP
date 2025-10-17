@@ -20,9 +20,35 @@
 
     <script type="module" src="js/script.js"></script>
   </head>
-  <div class="page_top">
+  <div class="page_top" id="page_top">
     <body>
-      <div class="main_wrap">
+      <!-- ローディング -->
+      <div id="loader-wrapper">
+        <div class="beer-glass-container">
+          <div class="beer-glass">
+            <div class="beer-liquid">
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+            </div>
+
+            <div class="beer-foam"></div>
+
+            <div class="glass-stem"></div>
+          </div>
+        </div>
+
+        <p class="loading-text">Brewing up a good time...</p>
+      </div>
+      <!-- ローディング -->
+      <div class="main_wrap" style="display: none">
         <!-- ヘッダー -->
         <header>
           <!-- pc menu -->
@@ -325,7 +351,7 @@
           </section>
           <div class="wave"><img src="images/wave.png" alt="波線" /></div>
           <div class="top_btn">
-            <a href="index.html"
+            <a href="#page_top"
               ><img src="images/top_button.png" alt="トップに戻る"
             /></a>
           </div>

@@ -163,7 +163,7 @@ header {
           position: absolute;
           display: block;
           width: 100%;
-          height: 35px;
+          height: 25px;
 
           &--01 {
             top: 0;
@@ -196,7 +196,7 @@ header {
           .hbgButton__fig {
             &--01 {
               top: 9px;
-              right: 2px;
+
               transform: rotate(30deg);
               // 開くとき：まずtopに移動(0s)、その後に回転を開始(0.2s)
               transition: top 0.2s 0s, transform 0.3s 0.2s;
@@ -208,7 +208,7 @@ header {
             }
             &--03 {
               top: 9px;
-              right: -2px;
+
               transform: rotate(-30deg);
               // 開くとき：まずtopに移動(0s)、その後に回転を開始(0.2s)
               transition: top 0.2s 0s, transform 0.3s 0.2s;
@@ -232,32 +232,26 @@ header {
     }
 
     .arch {
+      scale: 1.4;
       position: absolute;
-      top: -40%;
+      top: -80%;
     }
 
     .main_title {
       font-family: $font_en;
-      font-size: 40px;
-    }
-
-    #t_main {
-      font-size: 48px !important;
+      font-size: 56px;
+      line-height: 65px;
     }
 
     .sub_title {
       position: absolute;
       right: 50%;
       transform: translateX(50%);
-      top: 65px;
+      top: 70px;
       white-space: nowrap;
       font-weight: bold;
       letter-spacing: 0.2em;
-      font-size: 24px; /* 文字のサイズ */
-    }
-
-    #t_sub {
-      font-size: 32px !important;
+      font-size: 32px; /* 文字のサイズ */
     }
   }
   .dilate {

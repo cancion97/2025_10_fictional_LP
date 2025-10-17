@@ -9,6 +9,10 @@ img {
   max-width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .page_top {
   @media (width > 430px) {
     background-image: url(../images/pc_bg.png);

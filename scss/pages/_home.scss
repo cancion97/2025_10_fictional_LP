@@ -16,6 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 
   .title_wrap {
     margin-block-start: 3rem;
@@ -278,30 +279,6 @@ section {
   }
 }
 
-// .review {
-//   width: 100%;
-//   max-width: 430px; /* スマホ幅制限 */
-//   margin: 0 auto;
-//   overflow: hidden;
-// }
-
-// .review_wrapper {
-//   padding-block: 2rem;
-//   position: relative;
-//   display: flex;
-//   gap: 4.5rem;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .review_slide {
-//   width: 280px;
-//   height: auto;
-//   img {
-//     width: 100%;
-//   }
-// }
-
 .drag {
   width: 100%;
   text-align: right;
@@ -321,6 +298,7 @@ section {
   height: auto;
   margin-block-start: 2rem;
   transition: 0.2s;
+
   &:hover {
     scale: 1.1;
   }

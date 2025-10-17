@@ -185,3 +185,31 @@ cartBtn.addEventListener("click", () => {
   cartBtn.firstChild.textContent = "カートに追加しました！";
   cartImg.src = "images/cart_add.png";
 });
+
+//loading
+document.addEventListener("DOMContentLoaded", () => {
+  // ページ内のすべてのリソース（画像など）が読み込まれるのを待つ
+  window.addEventListener("load", () => {
+    const loaderWrapper = document.getElementById("loader-wrapper");
+    const mainContent = document.getElementById("main-content");
+
+    // アニメーションの完了を待つ時間（例: CSSアニメーションの合計時間 + 余韻）
+    // pour-beer が3秒、rise-foam が3秒（0.5秒遅延）なので、4秒程度
+    const minLoadTime = 4000; // 4秒
+
+    // 最小ロード時間が経過した後にローディングを終了
+    setTimeout(() => {
+      // ローディング画面を隠す
+      loaderWrapper.classList.add("is-hidden");
+
+      // メインコンテンツを表示
+      mainContent.style.display = "block";
+
+      // ローディング画面が完全に非表示になった後にDOMから削除（オプション）
+      // transitionの時間が0.5秒なので、それより後に実行
+      setTimeout(() => {
+        loaderWrapper.remove();
+      }, 500);
+    }, minLoadTime);
+  });
+});

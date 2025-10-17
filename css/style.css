@@ -429,7 +429,7 @@ header .header_wrap .header_right .hbgButton__fig {
   position: absolute;
   display: block;
   width: 100%;
-  height: 35px;
+  height: 25px;
 }
 header .header_wrap .header_right .hbgButton__fig--01 {
   top: 0;
@@ -452,7 +452,6 @@ header .header_wrap .header_right .hbgButton__fig svg path {
 }
 header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--01 {
   top: 9px;
-  right: 2px;
   transform: rotate(30deg);
   transition: top 0.2s 0s, transform 0.3s 0.2s;
 }
@@ -462,7 +461,6 @@ header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--02 {
 }
 header .header_wrap .header_right .hbgButton.is-open .hbgButton__fig--03 {
   top: 9px;
-  right: -2px;
   transform: rotate(-30deg);
   transition: top 0.2s 0s, transform 0.3s 0.2s;
 }
@@ -479,28 +477,24 @@ header .title_wrap {
   }
 }
 header .title_wrap .arch {
+  scale: 1.4;
   position: absolute;
-  top: -40%;
+  top: -80%;
 }
 header .title_wrap .main_title {
   font-family: "Palanquin Dark", sans-serif;
-  font-size: 40px;
-}
-header .title_wrap #t_main {
-  font-size: 48px !important;
+  font-size: 56px;
+  line-height: 65px;
 }
 header .title_wrap .sub_title {
   position: absolute;
   right: 50%;
   transform: translateX(50%);
-  top: 65px;
+  top: 70px;
   white-space: nowrap;
   font-weight: bold;
   letter-spacing: 0.2em;
-  font-size: 24px; /* 文字のサイズ */
-}
-header .title_wrap #t_sub {
-  font-size: 32px !important;
+  font-size: 32px; /* 文字のサイズ */
 }
 header .dilate {
   filter: url(#dilate);
@@ -682,6 +676,7 @@ footer small,
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 .menu .title_wrap {
   margin-block-start: 3rem;
@@ -1134,7 +1129,7 @@ html {
 }
 
 #about_us_body {
-  background-image: url(../images/sp_about_us_bg.png);
+  background-image: url(../images/sp_about_us_bg.webp);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -1213,8 +1208,195 @@ html {
   }
 }
 
+.beer-glass-container {
+  width: 100px;
+  height: 200px; /* 全体の高さを少し低く調整 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.beer-glass {
+  width: 100%; /* コンテナの幅100pxに合わせる */
+  height: 150px; /* グラス本体の高さ調整 */
+  position: absolute;
+  bottom: 30px; /* 脚の高さに合わせて調整 */
+  overflow: hidden;
+  background-color: transparent;
+  /* ========== 決定的な変更点: path() を使用して滑らかに ========== */
+  clip-path: path("M 30 0 C 10 0, 5 30, 5 60 C 5 110, 15 150, 50 150 C 85 150, 95 110, 95 60 C 95 30, 90 0, 70 0 Z");
+  /* ======================================================= */
+  box-shadow: inset 0 0 0 3px #2c3e50;
+  z-index: 1;
+}
+
+.glass-stem {
+  width: 50px; /* 脚の幅を少し狭く */
+  height: 30px; /* 脚の高さを調整 */
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  clip-path: polygon(45% 0%, 55% 0%, 90% 100%, 10% 100%);
+  box-shadow: inset 0 0 0 3px #2c3e50;
+}
+
+.beer-liquid {
+  width: 100%;
+  height: 0%;
+  background-color: #fca02d;
+  position: absolute;
+  bottom: 0;
+  transition: height 0.5s ease-out;
+  /* liquid, foam は親の path を継承 */
+  clip-path: inherit;
+  z-index: 0;
+  animation: fill-beer 3s ease-in-out forwards;
+}
+
+@keyframes fill-beer {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 80%;
+  }
+}
+.beer-foam {
+  position: absolute;
+  bottom: calc(80% - 10px);
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, #ffffff 100%);
+  border-radius: 50%/20%;
+  transform: translateY(10px);
+  opacity: 0;
+  clip-path: inherit;
+  z-index: 2;
+  animation: rise-foam 3s 0.5s ease-out forwards;
+}
+
+@keyframes rise-foam {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* 泡の垂れる表現 (変更なし) */
+.beer-foam::before {
+  top: -5px;
+  left: 20%;
+  width: 15px;
+  height: 10px;
+  transform: rotate(10deg);
+  z-index: 3;
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+  opacity: 0;
+  animation: drip-foam 0.5s 2.8s forwards;
+}
+
+.beer-foam::after {
+  top: -8px;
+  right: 20%;
+  width: 12px;
+  height: 8px;
+  transform: rotate(-5deg);
+  z-index: 3;
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  animation: drip-foam 0.5s 3s forwards;
+}
+
+@keyframes drip-foam {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(5px) rotate(5deg);
+  }
+}
+/* ビールの気泡 (変更なし) */
+.beer-liquid::before,
+.beer-liquid::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  animation: bubble-up 2s infinite ease-out;
+}
+
+.beer-liquid::before {
+  width: 5px;
+  height: 5px;
+  left: 30%;
+  bottom: 10%;
+  animation-delay: 0.5s;
+}
+
+.beer-liquid::after {
+  width: 3px;
+  height: 3px;
+  left: 60%;
+  bottom: 20%;
+  animation-delay: 1.2s;
+}
+
+@keyframes bubble-up {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.2);
+    opacity: 0;
+  }
+}
+.loading-text {
+  color: #ffffff;
+  margin-top: 20px;
+  font-family: "Georgia", serif;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
 img {
   max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @media (width > 430px) {
