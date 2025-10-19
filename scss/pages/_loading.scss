@@ -303,14 +303,13 @@
   opacity: 0;
   pointer-events: none;
 }
-
 .loading-text {
-  letter-spacing: 5px;
   position: relative;
   font-size: 1.5rem;
   font-weight: bold;
-  color: transparent;
   text-transform: uppercase;
+  color: transparent;
+  letter-spacing: 5px;
   -webkit-text-stroke: 1px $accent_color01;
 
   @media (width < 570px) {
@@ -320,26 +319,24 @@
 }
 
 .loading-text::before {
+  content: "Brewing up a good time...";
   position: absolute;
   left: 0;
   top: 0;
-  overflow: hidden;
   width: 100%;
   height: 0;
   color: $accent_color01;
+  -webkit-text-stroke: 1px $accent_color01; /* ← stroke を維持 */
+  overflow: hidden;
   animation: textSlide 2.5s infinite linear;
-  content: "Brewing up a good time...";
 }
 
 @keyframes textSlide {
   0% {
-    -webkit-text-stroke: 1px $accent_color01;
     height: 0;
   }
-
   70%,
   100% {
     height: 100%;
-    -webkit-text-stroke: 0px $accent_color01;
   }
 }
