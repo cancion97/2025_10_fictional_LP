@@ -10,7 +10,7 @@ const pageTop = document.querySelector(".page_top");
 setTimeout(() => {
   loading.classList.add("active");
   pageTop.classList.remove("no_scroll");
-}, "4000");
+}, "4500");
 
 // ハンバーガーメニュー
 const menu = document.querySelector(".menu");
