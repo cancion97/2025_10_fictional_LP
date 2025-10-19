@@ -82,18 +82,16 @@ window.addEventListener("load", () => {
 //レビュー
 window.addEventListener("load", () => {
   const swiper = new Swiper(".review", {
-    loop: true, // 無限ループ
-    slidesPerView: 1, // 常に1枚ずつ表示
-    spaceBetween: 32, // スライドの間隔
-    speed: 1500, // 切り替えアニメーション速度（ミリ秒）
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 96,
+    centeredSlides: true,
+    speed: 1500,
     autoplay: {
-      delay: 3000, // 2.5秒ごとに次へ
-      disableOnInteraction: false, // 操作しても止まらない
+      delay: 3000,
+      disableOnInteraction: false,
     },
-    allowTouchMove: true, // ドラッグ/スワイプOK
-    grabCursor: true, // カーソルを「手の形」に
-    centeredSlides: true, // 中央寄せ（好みで）
-    loopAdditionalSlides: 2, // 無限ループ時の補助スライド
+    grabCursor: true,
   });
 });
 
@@ -133,23 +131,3 @@ cartBtn.addEventListener("click", () => {
   cartBtn.firstChild.textContent = "カートに追加しました！";
   cartImg.src = "images/cart_add.png";
 });
-
-//loading
-
-//         // 3. ローディングテキストの更新
-//         loadingText.textContent = `Loading... ${textPercentage}%`;
-//       } else {
-//         // 100%に達したらアニメーションを終了
-//         clearInterval(intervalId);
-//         loadingText.textContent = "Complete! Enjoy Your Beer!";
-
-//         // オプション: 最後の泡の動きを追加（完了アニメーション）
-//         const foam = beerLiquid.nextElementSibling;
-//         foam.style.transition = "transform 0.5s, opacity 0.5s";
-//         foam.style.opacity = "1";
-//       }
-//     }, intervalTime);
-//   };
-
-//   fillBeer(); // アニメーションを開始
-// });

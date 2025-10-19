@@ -384,7 +384,9 @@ section {
 
   .swiper-slide {
     text-align: center;
-    width: 100%;
+
+    width: 334px; /* 固定幅 */
+    flex-shrink: 0;
 
     img {
       width: 334px;
