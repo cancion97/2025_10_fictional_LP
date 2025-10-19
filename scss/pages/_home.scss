@@ -352,7 +352,8 @@ section {
   width: 320px;
   margin-inline: auto;
   img {
-    z-index: 200;
+    position: relative;
+    z-index: 1000;
   }
 }
 
