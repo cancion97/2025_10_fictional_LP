@@ -13,14 +13,14 @@
       width: 70%;
       left: -150px;
       bottom: 100px;
-      max-width: 600px;
+      max-width: 580px;
     }
 
     .pc_une02 {
       position: fixed;
       width: 70%;
       right: 180px;
-      max-width: 500px;
+      max-width: 450px;
     }
 
     .pc_une03 {
@@ -28,7 +28,7 @@
       width: 70%;
       bottom: 20px;
       right: 0px;
-      max-width: 317px;
+      max-width: 280px;
     }
 
     .target {
@@ -44,7 +44,7 @@
   animation: floating-x01 9.2s ease-in-out infinite alternate-reverse;
 }
 .target01 {
-  animation: floating-y01 1.8s ease-in-out infinite alternate-reverse;
+  animation: floating-y01 2.5s ease-in-out infinite alternate-reverse;
 }
 @keyframes floating-x01 {
   0% {
@@ -64,10 +64,10 @@
 }
 
 .pc_une02 {
-  animation: floating-x02 9.2s ease-in-out infinite alternate-reverse;
+  animation: floating-x02 12.2s ease-in-out infinite alternate-reverse;
 }
 .target02 {
-  animation: floating-y02 1.8s ease-in-out infinite alternate-reverse;
+  animation: floating-y02 2.2s ease-in-out infinite alternate-reverse;
 }
 @keyframes floating-x02 {
   0% {
@@ -87,7 +87,7 @@
 }
 
 .pc_une03 {
-  animation: floating-x03 9.2s ease-in-out infinite alternate-reverse;
+  animation: floating-x03 10.2s ease-in-out infinite alternate-reverse;
 }
 .target03 {
   animation: floating-y03 1.8s ease-in-out infinite alternate-reverse;
@@ -365,7 +365,7 @@ section {
 
 //レビュー
 .review_title {
-  width: 50%;
+  width: 70%;
   display: block;
   text-align: center;
   margin-inline: auto;

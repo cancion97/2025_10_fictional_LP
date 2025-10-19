@@ -7,10 +7,12 @@
   display: none;
 
   @media (width > 750px) {
-    position: absolute;
+    position: fixed;
+    z-index: 200;
     top: 0.5rem;
     right: 2rem;
     display: flex;
+
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;

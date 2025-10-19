@@ -13,6 +13,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.no_scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .page_top {
   @media (width > 430px) {
     background-image: url(../images/pc_bg.webp);

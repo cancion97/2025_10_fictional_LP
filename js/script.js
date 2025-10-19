@@ -6,8 +6,10 @@
 
 //ローディング画面
 const loading = document.querySelector("#loading_container");
+const pageTop = document.querySelector(".page_top");
 setTimeout(() => {
   loading.classList.add("active");
+  pageTop.classList.remove("no_scroll");
 }, "4000");
 
 // ハンバーガーメニュー
