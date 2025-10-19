@@ -351,8 +351,8 @@ section {
 .chart {
   width: 320px;
   margin-inline: auto;
+  position: relative;
   img {
-    position: relative;
     z-index: 1000;
   }
 }
@@ -366,13 +366,13 @@ section {
 
 //レビュー
 .review_title {
-  width: 70%;
+  width: 60%;
   display: block;
   text-align: center;
   margin-inline: auto;
   margin-block-end: 3rem;
   font-size: 2rem;
-  border-bottom: 5px $accent_color01 dotted;
+  border-bottom: 2px $text_color dashed;
 }
 
 //横スクロール
