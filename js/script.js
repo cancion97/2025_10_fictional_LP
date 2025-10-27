@@ -1,6 +1,8 @@
 // =======================================
 // Lenis 初期化（スムーズスクロール用）
 // =======================================
+
+import Lenis from "https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.28/dist/lenis.mjs";
 const lenis = new Lenis();
 
 function raf(time) {
@@ -10,16 +12,17 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-import Lenis from "https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.28/dist/lenis.mjs";
-
-// トップボタン
-const topBtn = document.querySelector(".top_btn");
-topBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  lenis.scrollTo(0, {
-    duration: 0.7, // 秒
-    easing: (t) => t, // 線形
-  });
+window.addEventListener("DOMContentLoaded", () => {
+  const topBtn = document.querySelector(".top_btn");
+  if (topBtn) {
+    topBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      lenis.scrollTo(0, {
+        duration: 0.7,
+        easing: (t) => t,
+      });
+    });
+  }
 });
 
 // =======================================
